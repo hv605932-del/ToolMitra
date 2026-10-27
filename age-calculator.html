@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Age Calculator - Calculate Your Exact Age | ToolMitra</title>
+
+    <meta name="description"
+        content="Calculate your exact age in years, months and days with ToolMitra's free online Age Calculator.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            Age Calculator
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>Age Calculator</h1>
+
+            <p>
+                Calculate your exact age in years, months and days
+                using our free online Age Calculator.
+            </p>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div class="ad-box">
+            Advertisement
+        </div>
+
+
+        <!-- Calculator -->
+        <div class="calculator-card">
+
+            <h2>Calculate Your Age</h2>
+
+
+            <label for="birthDate">
+                Enter Your Date of Birth
+            </label>
+
+            <input
+                type="date"
+                id="birthDate"
+            >
+
+
+            <label for="calculateDate">
+                Calculate Age On
+            </label>
+
+            <input
+                type="date"
+                id="calculateDate"
+            >
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="calculateAge()">
+                    Calculate Age
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="resetAge()">
+                    Reset
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+            <div
+                id="ageResult"
+                class="calculator-result"
+                style="display:none;"
+            >
+
+                <div class="result-row">
+
+                    <span>Years</span>
+
+                    <strong id="ageYears">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Months</span>
+
+                    <strong id="ageMonths">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Days</span>
+
+                    <strong id="ageDays">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-total">
+
+                    <span>Exact Age</span>
+
+                    <strong id="exactAge">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>What is an Age Calculator?</h2>
+
+            <p>
+                An Age Calculator is an online tool that calculates
+                a person's age based on their date of birth and a
+                selected calculation date.
+            </p>
+
+            <p>
+                ToolMitra's free Age Calculator can show your age
+                in years, months and days.
+            </p>
+
+
+            <h2>How to Calculate Your Age?</h2>
+
+            <ol>
+
+                <li>
+                    Enter your date of birth.
+                </li>
+
+                <li>
+                    Select the date on which you want to calculate
+                    your age.
+                </li>
+
+                <li>
+                    Click the Calculate Age button.
+                </li>
+
+                <li>
+                    Your exact age will be displayed.
+                </li>
+
+            </ol>
+
+
+            <h2>Example</h2>
+
+            <p>
+                Suppose your date of birth is 15 January 2000.
+                Select today's date or any other date and click
+                Calculate Age. The calculator will determine the
+                difference between the two dates.
+            </p>
+
+
+            <h2>Why Use an Online Age Calculator?</h2>
+
+            <p>
+                Manually calculating age can become difficult when
+                months and days are involved. An online calculator
+                makes the process quick and convenient.
+            </p>
+
+            <p>
+                You can use this tool for birthdays, forms,
+                applications, eligibility checks and general
+                date calculations.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Is this Age Calculator free?</h3>
+
+            <p>
+                Yes. ToolMitra's Age Calculator is completely free
+                to use.
+            </p>
+
+
+            <h3>Can I calculate my age on a future date?</h3>
+
+            <p>
+                Yes. You can select another date in the
+                "Calculate Age On" field.
+            </p>
+
+
+            <h3>Can this calculator show age in years, months and days?</h3>
+
+            <p>
+                Yes. The calculator displays your age separately
+                in years, months and days.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // Set today's date automatically
+        const today = new Date();
+
+        const todayString =
+            today.toISOString().split("T")[0];
+
+        document.getElementById("calculateDate").value =
+            todayString;
+
+
+        function calculateAge() {
+
+            const birthValue =
+                document.getElementById("birthDate").value;
+
+            const calculateValue =
+                document.getElementById("calculateDate").value;
+
+
+            if (!birthValue || !calculateValue) {
+
+                alert("Please select both dates.");
+
+                return;
+            }
+
+
+            const birthDate =
+                new Date(birthValue + "T00:00:00");
+
+            const calculateDate =
+                new Date(calculateValue + "T00:00:00");
+
+
+            if (birthDate > calculateDate) {
+
+                alert(
+                    "Date of birth cannot be after the calculation date."
+                );
+
+                return;
+            }
+
+
+            let years =
+                calculateDate.getFullYear() -
+                birthDate.getFullYear();
+
+            let months =
+                calculateDate.getMonth() -
+                birthDate.getMonth();
+
+            let days =
+                calculateDate.getDate() -
+                birthDate.getDate();
+
+
+            // If days are negative
+            if (days < 0) {
+
+                months--;
+
+                const previousMonth =
+                    new Date(
+                        calculateDate.getFullYear(),
+                        calculateDate.getMonth(),
+                        0
+                    );
+
+                days += previousMonth.getDate();
+
+            }
+
+
+            // If months are negative
+            if (months < 0) {
+
+                years--;
+
+                months += 12;
+
+            }
+
+
+            document.getElementById("ageYears").textContent =
+                years;
+
+            document.getElementById("ageMonths").textContent =
+                months;
+
+            document.getElementById("ageDays").textContent =
+                days;
+
+
+            document.getElementById("exactAge").textContent =
+                years + " Years, " +
+                months + " Months, " +
+                days + " Days";
+
+
+            document.getElementById("ageResult").style.display =
+                "block";
+
+        }
+
+
+        function resetAge() {
+
+            document.getElementById("birthDate").value = "";
+
+            document.getElementById("calculateDate").value =
+                todayString;
+
+            document.getElementById("ageResult").style.display =
+                "none";
+
+        }
+
+    </script>
+
+</body>
+</html>

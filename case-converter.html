@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Case Converter - Convert Text to Uppercase, Lowercase & Title Case | ToolMitra</title>
+
+    <meta
+        name="description"
+        content="Convert text to uppercase, lowercase, title case and sentence case online for free. Use ToolMitra Case Converter to quickly change text formatting."
+    >
+
+    <meta
+        name="keywords"
+        content="case converter, uppercase converter, lowercase converter, title case converter, sentence case, text case converter"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            <span>Case Converter</span>
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>Case Converter</h1>
+
+            <p>
+                Convert text to uppercase, lowercase, title case
+                or sentence case online for free.
+            </p>
+
+        </div>
+
+
+        <!-- Tool -->
+        <div class="calculator-card">
+
+            <h2>Convert Your Text</h2>
+
+
+            <label for="textInput">
+                Enter your text
+            </label>
+
+
+            <textarea
+                id="textInput"
+                placeholder="Type or paste your text here..."
+                style="
+                    width:100%;
+                    min-height:220px;
+                    padding:15px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    font-size:16px;
+                    resize:vertical;
+                    margin-bottom:20px;
+                    box-sizing:border-box;
+                "
+            ></textarea>
+
+
+            <!-- Buttons -->
+            <div
+                class="calculator-buttons"
+                style="
+                    flex-wrap:wrap;
+                "
+            >
+
+                <button onclick="convertUppercase()">
+                    UPPERCASE
+                </button>
+
+
+                <button onclick="convertLowercase()">
+                    lowercase
+                </button>
+
+
+                <button onclick="convertTitleCase()">
+                    Title Case
+                </button>
+
+
+                <button onclick="convertSentenceCase()">
+                    Sentence case
+                </button>
+
+            </div>
+
+
+            <!-- Second row -->
+            <div
+                class="calculator-buttons"
+                style="
+                    margin-top:10px;
+                "
+            >
+
+                <button onclick="copyText()">
+                    Copy Text
+                </button>
+
+
+                <button
+                    onclick="clearText()"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Stats -->
+            <div
+                class="calculator-result"
+                style="
+                    margin-top:25px;
+                "
+            >
+
+                <div class="result-row">
+
+                    <span>Words</span>
+
+                    <strong id="wordCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Characters</span>
+
+                    <strong id="characterCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Characters Without Spaces</span>
+
+                    <strong id="characterNoSpaceCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div
+            style="
+                max-width:728px;
+                min-height:90px;
+                margin:40px auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#f5f5f5;
+                border-radius:10px;
+                color:#999;
+            "
+        >
+            Advertisement
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>Free Online Case Converter</h2>
+
+            <p>
+                ToolMitra Case Converter is a free online text
+                formatting tool that helps you quickly change the
+                capitalization of your text.
+            </p>
+
+            <p>
+                You can convert text into uppercase, lowercase,
+                title case or sentence case without manually
+                editing every word.
+            </p>
+
+
+            <h2>What Is a Case Converter?</h2>
+
+            <p>
+                A case converter changes the capitalization style
+                of text. It can be useful when formatting documents,
+                headings, social media content, notes, articles and
+                other written material.
+            </p>
+
+
+            <h2>Available Text Case Options</h2>
+
+
+            <h3>UPPERCASE</h3>
+
+            <p>
+                Converts all letters to capital letters.
+            </p>
+
+            <div class="formula-box">
+                Example: hello world → HELLO WORLD
+            </div>
+
+
+            <h3>lowercase</h3>
+
+            <p>
+                Converts all letters to lowercase.
+            </p>
+
+            <div class="formula-box">
+                Example: HELLO WORLD → hello world
+            </div>
+
+
+            <h3>Title Case</h3>
+
+            <p>
+                Capitalizes the first letter of each word.
+            </p>
+
+            <div class="formula-box">
+                Example: welcome to toolmitra → Welcome To Toolmitra
+            </div>
+
+
+            <h3>Sentence case</h3>
+
+            <p>
+                Capitalizes the first letter of sentences while
+                converting the remaining letters to lowercase.
+            </p>
+
+            <div class="formula-box">
+                Example: HELLO WORLD. HOW ARE YOU? → Hello world. How are you?
+            </div>
+
+
+            <h2>How to Use the Case Converter</h2>
+
+
+            <h3>1. Enter your text</h3>
+
+            <p>
+                Type your text or paste existing text into the
+                text box.
+            </p>
+
+
+            <h3>2. Choose a case</h3>
+
+            <p>
+                Select UPPERCASE, lowercase, Title Case or
+                Sentence case according to your requirement.
+            </p>
+
+
+            <h3>3. Copy your text</h3>
+
+            <p>
+                After converting the text, click Copy Text to
+                copy the result to your clipboard.
+            </p>
+
+
+            <h2>Who Can Use a Case Converter?</h2>
+
+            <p>
+                A case converter can be useful for students,
+                writers, bloggers, developers, content creators,
+                marketers and anyone who frequently works with text.
+            </p>
+
+
+            <h2>Is ToolMitra Case Converter Free?</h2>
+
+            <p>
+                Yes. The Case Converter is available as a free
+                browser-based tool.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Can I convert text to uppercase?</h3>
+
+            <p>
+                Yes. Click the UPPERCASE button to convert all
+                letters to capital letters.
+            </p>
+
+
+            <h3>Can I convert uppercase text to lowercase?</h3>
+
+            <p>
+                Yes. Click the lowercase button to convert the
+                text into lowercase letters.
+            </p>
+
+
+            <h3>Can I convert text to Title Case?</h3>
+
+            <p>
+                Yes. The Title Case option capitalizes the first
+                letter of each word.
+            </p>
+
+
+            <h3>Does the tool count words?</h3>
+
+            <p>
+                Yes. The tool automatically displays word count,
+                character count and characters excluding spaces.
+            </p>
+
+
+            <h3>Does the tool save my text?</h3>
+
+            <p>
+                The conversion is performed directly in your
+                browser. The page does not need to upload your
+                text to a server.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        style="
+            text-align:center;
+            padding:30px;
+        "
+    >
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+
+        <p>
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const textInput =
+            document.getElementById("textInput");
+
+
+        const wordCount =
+            document.getElementById("wordCount");
+
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        const characterNoSpaceCount =
+            document.getElementById(
+                "characterNoSpaceCount"
+            );
+
+
+        // Update statistics
+
+        function updateStats() {
+
+            const text =
+                textInput.value;
+
+
+            const trimmedText =
+                text.trim();
+
+
+            let words = 0;
+
+
+            if (trimmedText.length > 0) {
+
+                words =
+                    trimmedText
+                        .split(/\s+/)
+                        .length;
+
+            }
+
+
+            wordCount.textContent =
+                words;
+
+
+            characterCount.textContent =
+                text.length;
+
+
+            characterNoSpaceCount.textContent =
+                text.replace(/\s/g, "").length;
+
+        }
+
+
+        // UPPERCASE
+
+        function convertUppercase() {
+
+            textInput.value =
+                textInput.value.toUpperCase();
+
+
+            updateStats();
+
+        }
+
+
+        // lowercase
+
+        function convertLowercase() {
+
+            textInput.value =
+                textInput.value.toLowerCase();
+
+
+            updateStats();
+
+        }
+
+
+        // Title Case
+
+        function convertTitleCase() {
+
+            const text =
+                textInput.value.toLowerCase();
+
+
+            textInput.value =
+                text.replace(
+                    /\b\w/g,
+                    function (letter) {
+
+                        return letter.toUpperCase();
+
+                    }
+                );
+
+
+            updateStats();
+
+        }
+
+
+        // Sentence Case
+
+        function convertSentenceCase() {
+
+            const text =
+                textInput.value.toLowerCase();
+
+
+            textInput.value =
+                text.replace(
+                    /(^\s*\w|[.!?]\s*\w)/g,
+                    function (match) {
+
+                        return match.toUpperCase();
+
+                    }
+                );
+
+
+            updateStats();
+
+        }
+
+
+        // Copy
+
+        function copyText() {
+
+            const text =
+                textInput.value;
+
+
+            if (!text.trim()) {
+
+                alert(
+                    "Please enter some text first."
+                );
+
+                return;
+
+            }
+
+
+            navigator.clipboard
+                .writeText(text)
+                .then(function () {
+
+                    alert(
+                        "Text copied successfully!"
+                    );
+
+                })
+                .catch(function () {
+
+                    alert(
+                        "Unable to copy text. Please copy it manually."
+                    );
+
+                });
+
+        }
+
+
+        // Clear
+
+        function clearText() {
+
+            textInput.value =
+                "";
+
+            updateStats();
+
+            textInput.focus();
+
+        }
+
+
+        // Live statistics
+
+        textInput.addEventListener(
+            "input",
+            updateStats
+        );
+
+
+        // Initial statistics
+
+        updateStats();
+
+    </script>
+
+</body>
+
+</html>

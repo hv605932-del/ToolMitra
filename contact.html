@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Contact ToolMitra - Get in touch with us for questions, suggestions, feedback and support.">
+
+    <meta name="keywords"
+        content="ToolMitra contact, contact ToolMitra, online tools support">
+
+    <meta name="author" content="ToolMitra">
+
+    <title>Contact ToolMitra - Get in Touch</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <span>⚡</span>
+
+        ToolMitra
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="../index.html">Home</a>
+
+        <a href="../index.html#tools">Tools</a>
+
+        <a href="about.html">About</a>
+
+        <button id="darkModeBtn" class="dark-btn">
+            🌙
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= CONTACT PAGE ================= -->
+
+<main class="tool-page-container">
+
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="../index.html">Home</a>
+
+        &nbsp; / &nbsp;
+
+        Contact
+
+    </div>
+
+
+
+    <!-- Header -->
+
+    <div class="tool-header">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question, suggestion or feedback?
+            We'd love to hear from you.
+        </p>
+
+    </div>
+
+
+
+    <!-- Contact Card -->
+
+    <div class="calculator-card">
+
+
+        <h2>📩 Send Us a Message</h2>
+
+
+        <form id="contactForm">
+
+
+            <label for="name">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label for="email">
+                Your Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+
+            <label for="subject">
+                Subject
+            </label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="What is your message about?"
+                required
+            >
+
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                rows="7"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+
+
+            <button
+                type="submit"
+                class="tool-link"
+                style="border:none; width:100%; cursor:pointer;">
+
+                Send Message →
+
+            </button>
+
+
+        </form>
+
+
+        <div
+            id="contactResult"
+            class="calculator-result"
+            style="display:none;">
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= CONTACT INFORMATION ================= -->
+
+    <div class="seo-content">
+
+
+        <h2>How Can We Help?</h2>
+
+        <p>
+            ToolMitra is designed to provide simple and useful
+            online tools for students, creators, professionals
+            and everyday users.
+        </p>
+
+
+        <p>
+            If you find an issue with one of our tools, have a
+            suggestion for a new tool, or want to share feedback,
+            please use the contact form above.
+        </p>
+
+
+
+        <h2>Suggestions & Feedback</h2>
+
+        <p>
+            Your feedback helps us improve ToolMitra and create
+            better free online tools. You can tell us about a
+            feature you'd like to see or report a problem with
+            an existing tool.
+        </p>
+
+
+
+        <h2>Important Note</h2>
+
+        <p>
+            This contact form currently opens your default email
+            application. Make sure your email application is
+            configured on your device before sending a message.
+        </p>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        ⚡ ToolMitra
+
+    </div>
+
+
+    <p>
+        Free online tools for everyone.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 ToolMitra. All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================= CONTACT SCRIPT ================= -->
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const subject =
+        document.getElementById("subject").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    /*
+       IMPORTANT:
+       Replace this email address with your real
+       ToolMitra email address before publishing.
+    */
+
+    const contactEmail = "hv605932@gmail.com";
+
+
+    const mailSubject =
+        encodeURIComponent(subject);
+
+    const mailBody =
+        encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+
+    window.location.href =
+        "mailto:" +
+        contactEmail +
+        "?subject=" +
+        mailSubject +
+        "&body=" +
+        mailBody;
+
+
+    const result =
+        document.getElementById("contactResult");
+
+
+    result.style.display = "block";
+
+    result.innerHTML =
+        "<strong>Your email application should open now.</strong><br>" +
+        "If it does not open, please check your email application settings.";
+
+});
+
+</script>
+
+
+</body>
+
+</html>

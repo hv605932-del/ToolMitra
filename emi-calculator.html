@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMI Calculator - Free Loan EMI Calculator | ToolMitra</title>
+
+    <meta name="description"
+        content="Calculate your monthly loan EMI, total interest and total payment with ToolMitra's free online EMI Calculator.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> →
+            EMI Calculator
+        </div>
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>EMI Calculator</h1>
+
+            <p>
+                Calculate your monthly loan EMI, total interest and
+                total repayment amount using our free EMI Calculator.
+            </p>
+
+        </div>
+
+        <!-- Ad Placeholder -->
+        <div class="ad-box">
+            Advertisement
+        </div>
+
+        <!-- Calculator -->
+        <div class="calculator-card">
+
+            <h2>Loan EMI Calculator</h2>
+
+            <label for="loanAmount">Loan Amount (₹)</label>
+
+            <input
+                type="number"
+                id="loanAmount"
+                placeholder="Example: 500000"
+            >
+
+            <label for="interestRate">Annual Interest Rate (%)</label>
+
+            <input
+                type="number"
+                id="interestRate"
+                placeholder="Example: 8.5"
+                step="0.01"
+            >
+
+            <label for="loanTenure">Loan Tenure (Years)</label>
+
+            <input
+                type="number"
+                id="loanTenure"
+                placeholder="Example: 5"
+            >
+
+            <div class="calculator-buttons">
+
+                <button onclick="calculateEMI()">
+                    Calculate EMI
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="resetEMI()">
+                    Reset
+                </button>
+
+            </div>
+
+            <div
+                id="emiResult"
+                class="calculator-result"
+                style="display:none;"
+            >
+
+                <div class="result-row">
+                    <span>Monthly EMI</span>
+                    <strong id="monthlyEMI">₹0</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Total Interest</span>
+                    <strong id="totalInterest">₹0</strong>
+                </div>
+
+                <div class="result-total">
+                    <span>Total Payment</span>
+                    <strong id="totalPayment">₹0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>What is an EMI?</h2>
+
+            <p>
+                EMI stands for Equated Monthly Instalment. It is the
+                fixed amount a borrower generally pays every month
+                towards a loan.
+            </p>
+
+            <p>
+                An EMI usually contains both the principal amount and
+                the interest charged by the lender.
+            </p>
+
+            <h2>How to use the EMI Calculator?</h2>
+
+            <ol>
+                <li>Enter your loan amount.</li>
+                <li>Enter the annual interest rate.</li>
+                <li>Enter the loan tenure in years.</li>
+                <li>Click the Calculate EMI button.</li>
+            </ol>
+
+            <h2>EMI Formula</h2>
+
+            <div class="formula-box">
+
+                EMI = P × R × (1 + R)ⁿ ÷
+                ((1 + R)ⁿ - 1)
+
+            </div>
+
+            <p>
+                Where P is the principal loan amount, R is the monthly
+                interest rate and N is the total number of monthly
+                instalments.
+            </p>
+
+            <h2>Example</h2>
+
+            <p>
+                Suppose you take a ₹5,00,000 loan at an annual interest
+                rate of 8.5% for 5 years. Enter these values into the
+                calculator to estimate your monthly EMI and total
+                repayment.
+            </p>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Is this EMI calculator free?</h3>
+
+            <p>
+                Yes. ToolMitra's EMI Calculator is free to use.
+            </p>
+
+            <h3>Can I calculate home loan EMI?</h3>
+
+            <p>
+                Yes. You can use this calculator for home loans,
+                personal loans, car loans and other standard reducing
+                balance loans.
+            </p>
+
+            <h3>Does EMI include interest?</h3>
+
+            <p>
+                Yes. The monthly EMI consists of both principal and
+                interest components.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function calculateEMI() {
+
+            const principal =
+                parseFloat(document.getElementById("loanAmount").value);
+
+            const annualRate =
+                parseFloat(document.getElementById("interestRate").value);
+
+            const years =
+                parseFloat(document.getElementById("loanTenure").value);
+
+            if (
+                isNaN(principal) ||
+                isNaN(annualRate) ||
+                isNaN(years) ||
+                principal <= 0 ||
+                annualRate < 0 ||
+                years <= 0
+            ) {
+                alert("Please enter valid loan details.");
+                return;
+            }
+
+            const monthlyRate =
+                annualRate / 12 / 100;
+
+            const months =
+                years * 12;
+
+            let emi;
+
+            if (monthlyRate === 0) {
+
+                emi = principal / months;
+
+            } else {
+
+                emi =
+                    principal *
+                    monthlyRate *
+                    Math.pow(1 + monthlyRate, months) /
+                    (Math.pow(1 + monthlyRate, months) - 1);
+
+            }
+
+            const totalPayment =
+                emi * months;
+
+            const totalInterest =
+                totalPayment - principal;
+
+            document.getElementById("monthlyEMI").textContent =
+                "₹" + emi.toLocaleString("en-IN", {
+                    maximumFractionDigits: 2
+                });
+
+            document.getElementById("totalInterest").textContent =
+                "₹" + totalInterest.toLocaleString("en-IN", {
+                    maximumFractionDigits: 2
+                });
+
+            document.getElementById("totalPayment").textContent =
+                "₹" + totalPayment.toLocaleString("en-IN", {
+                    maximumFractionDigits: 2
+                });
+
+            document.getElementById("emiResult").style.display =
+                "block";
+        }
+
+
+        function resetEMI() {
+
+            document.getElementById("loanAmount").value = "";
+
+            document.getElementById("interestRate").value = "";
+
+            document.getElementById("loanTenure").value = "";
+
+            document.getElementById("emiResult").style.display =
+                "none";
+        }
+
+    </script>
+
+</body>
+</html>

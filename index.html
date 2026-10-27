@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToolMitra - Free Online Tools & Calculators</title>
+
+    <meta
+        name="description"
+        content="ToolMitra offers free online tools, calculators, AI and content tools, image tools, text tools, QR generator and useful utilities. Fast, simple and easy to use."
+    >
+
+    <meta
+        name="keywords"
+        content="free online tools, online calculators, AI tools, GST calculator, EMI calculator, age calculator, percentage calculator, word counter, QR generator, image compressor, text tools"
+    >
+
+    <meta name="author" content="ToolMitra">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#6c5ce7">
+
+
+    <!-- Open Graph / Social Sharing -->
+
+    <meta
+        property="og:title"
+        content="ToolMitra - Free Online Tools & Calculators"
+    >
+
+    <meta
+        property="og:description"
+        content="Free online calculators, AI and content tools, image tools, text tools and useful utilities."
+    >
+
+    <meta property="og:type" content="website">
+
+
+    <title>ToolMitra - Free Online Tools & Calculators</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <span>⚡</span>
+
+            ToolMitra
+
+        </div>
+
+
+        <nav class="navbar">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#tools">
+                Tools
+            </a>
+
+            <a href="pages/about.html">
+                About
+            </a>
+
+            <button
+                id="darkModeBtn"
+                class="dark-btn"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+
+            <span class="badge">
+                🚀 100% Free Online Tools
+            </span>
+
+
+            <h1>
+
+                Free Online Tools to
+
+                <span>Work Smarter</span>
+
+            </h1>
+
+
+            <p>
+
+                Free calculators, AI and content tools, image tools,
+                text tools and useful utilities — all in one place.
+
+            </p>
+
+
+            <div class="hero-search">
+
+                <input
+                    type="text"
+                    id="toolSearch"
+                    placeholder="Search tools..."
+                    aria-label="Search tools"
+                >
+
+                <button type="button">
+                    🔍 Search
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ADVERTISEMENT ================= -->
+
+    <div class="ad-container">
+
+        <span>
+            ADVERTISEMENT
+        </span>
+
+    </div>
+
+
+
+    <!-- ================= TOOLS ================= -->
+
+    <section id="tools" class="tools-section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                🛠️ All Free Tools
+            </h2>
+
+            <p>
+                Choose a tool and get started instantly.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= AI TOOLS ================= -->
+
+        <h3 class="category-title">
+
+            🤖 AI & Content Tools
+
+        </h3>
+
+
+        <div class="tools-grid">
+
+
+            <!-- Prompt Generator -->
+
+            <div
+                class="tool-card"
+                data-name="AI Prompt Generator"
+            >
+
+                <div class="tool-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Prompt Generator
+                </h3>
+
+                <p>
+                    Generate useful prompts for AI tools.
+                </p>
+
+                <button
+                    type="button"
+                    onclick="openTool('promptTool')"
+                >
+                    Open Tool →
+                </button>
+
+            </div>
+
+
+
+            <!-- YouTube -->
+
+            <div
+                class="tool-card"
+                data-name="YouTube Title Generator"
+            >
+
+                <div class="tool-icon">
+                    ▶️
+                </div>
+
+                <h3>
+                    YouTube Title Generator
+                </h3>
+
+                <p>
+                    Generate catchy YouTube video titles.
+                </p>
+
+                <a
+                    href="tools/youtube-title-generator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Instagram -->
+
+            <div
+                class="tool-card"
+                data-name="Instagram Caption Generator"
+            >
+
+                <div class="tool-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Instagram Caption Generator
+                </h3>
+
+                <p>
+                    Create captions for Instagram posts.
+                </p>
+
+                <a
+                    href="tools/instagram-caption-generator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Summarizer -->
+
+            <div
+                class="tool-card"
+                data-name="Text Summarizer"
+            >
+
+                <div class="tool-icon">
+                    ✍️
+                </div>
+
+                <h3>
+                    Text Summarizer
+                </h3>
+
+                <p>
+                    Quickly summarize long text.
+                </p>
+
+                <a
+                    href="tools/text-summarizer.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= CALCULATORS ================= -->
+
+        <h3 class="category-title">
+
+            🧮 Calculators
+
+        </h3>
+
+
+        <div class="tools-grid">
+
+
+            <!-- Percentage -->
+
+            <div
+                class="tool-card"
+                data-name="Percentage Calculator"
+            >
+
+                <div class="tool-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Percentage Calculator
+                </h3>
+
+                <p>
+                    Calculate percentages instantly.
+                </p>
+
+                <a
+                    href="tools/percentage.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- GST -->
+
+            <div
+                class="tool-card"
+                data-name="GST Calculator"
+            >
+
+                <div class="tool-icon">
+                    💰
+                </div>
+
+                <h3>
+                    GST Calculator
+                </h3>
+
+                <p>
+                    Calculate GST amount and total price.
+                </p>
+
+                <a
+                    href="tools/gst.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Age -->
+
+            <div
+                class="tool-card"
+                data-name="Age Calculator"
+            >
+
+                <div class="tool-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Age Calculator
+                </h3>
+
+                <p>
+                    Calculate your exact age.
+                </p>
+
+                <a
+                    href="tools/age-calculator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- EMI -->
+
+            <div
+                class="tool-card"
+                data-name="EMI Calculator"
+            >
+
+                <div class="tool-icon">
+                    🏦
+                </div>
+
+                <h3>
+                    EMI Calculator
+                </h3>
+
+                <p>
+                    Calculate monthly loan EMI.
+                </p>
+
+                <a
+                    href="tools/emi-calculator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= IMAGE TOOLS ================= -->
+
+        <h3 class="category-title">
+
+            🖼️ Image Tools
+
+        </h3>
+
+
+        <div class="tools-grid">
+
+
+            <!-- Image Compressor -->
+
+            <div
+                class="tool-card"
+                data-name="Image Compressor"
+            >
+
+                <div class="tool-icon">
+                    🖼️
+                </div>
+
+                <h3>
+                    Image Compressor
+                </h3>
+
+                <p>
+                    Reduce image file size.
+                </p>
+
+                <a
+                    href="tools/image-compressor.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Image to WebP -->
+
+            <div
+                class="tool-card"
+                data-name="Image to WebP"
+            >
+
+                <div class="tool-icon">
+                    📸
+                </div>
+
+                <h3>
+                    Image to WebP
+                </h3>
+
+                <p>
+                    Convert images to WebP format.
+                </p>
+
+                <a
+                    href="tools/image-to-webp.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- QR Code -->
+
+            <div
+                class="tool-card"
+                data-name="QR Code Generator"
+            >
+
+                <div class="tool-icon">
+                    📱
+                </div>
+
+                <h3>
+                    QR Code Generator
+                </h3>
+
+                <p>
+                    Create QR codes instantly.
+                </p>
+
+                <a
+                    href="tools/qr-generator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Color Palette -->
+
+            <div
+                class="tool-card"
+                data-name="Color Palette Generator"
+            >
+
+                <div class="tool-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Color Palette Generator
+                </h3>
+
+                <p>
+                    Generate beautiful color palettes.
+                </p>
+
+                <a
+                    href="tools/color-generator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= TEXT TOOLS ================= -->
+
+        <h3 class="category-title">
+
+            📝 Text Tools
+
+        </h3>
+
+
+        <div class="tools-grid">
+
+
+            <!-- Word Counter -->
+
+            <div
+                class="tool-card"
+                data-name="Word Counter"
+            >
+
+                <div class="tool-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Word Counter
+                </h3>
+
+                <p>
+                    Count words and characters.
+                </p>
+
+                <a
+                    href="tools/word-counter.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Case Converter -->
+
+            <div
+                class="tool-card"
+                data-name="Case Converter"
+            >
+
+                <div class="tool-icon">
+                    🔤
+                </div>
+
+                <h3>
+                    Case Converter
+                </h3>
+
+                <p>
+                    Convert text to different cases.
+                </p>
+
+                <a
+                    href="tools/case-converter.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Password Generator -->
+
+            <div
+                class="tool-card"
+                data-name="Password Generator"
+            >
+
+                <div class="tool-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Password Generator
+                </h3>
+
+                <p>
+                    Generate strong passwords.
+                </p>
+
+                <a
+                    href="tools/password-generator.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- Unit Converter -->
+
+            <div
+                class="tool-card"
+                data-name="Unit Converter"
+            >
+
+                <div class="tool-icon">
+                    📏
+                </div>
+
+                <h3>
+                    Unit Converter
+                </h3>
+
+                <p>
+                    Convert common units easily.
+                </p>
+
+                <a
+                    href="tools/unit-converter.html"
+                    class="tool-link"
+                >
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= TOOL MODAL ================= -->
+
+    <div
+        id="toolModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeTool()"
+                aria-label="Close tool"
+            >
+                ✕
+            </button>
+
+            <div id="toolContent"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+        id="about"
+        class="about-section"
+    >
+
+        <h2>
+            About ToolMitra
+        </h2>
+
+        <p>
+            ToolMitra provides simple, free and easy-to-use online
+            tools for students, creators, professionals and everyday users.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+            ⚡ ToolMitra
+
+        </div>
+
+
+        <p>
+            Free online tools for everyone.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            <a href="pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            <a href="pages/contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+
+            © 2026 ToolMitra. All rights reserved.
+
+        </p>
+
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

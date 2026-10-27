@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GST Calculator India - Free Online GST Calculator | ToolMitra</title>
+
+    <meta name="description"
+          content="Use our free GST calculator to calculate GST amount, CGST, SGST and total price instantly.">
+
+    <link rel="stylesheet"
+          href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        ⚡ ToolMitra
+    </div>
+
+    <nav class="navbar">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="../index.html#tools">
+            Tools
+        </a>
+
+        <a href="../pages/about.html">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="tool-page-container">
+
+
+    <div class="breadcrumb">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        /
+
+        <span>
+            GST Calculator
+        </span>
+
+    </div>
+
+
+
+    <section class="tool-header">
+
+        <h1>
+            GST Calculator
+        </h1>
+
+        <p>
+            Calculate GST amount, CGST, SGST and total price
+            quickly using our free GST calculator.
+        </p>
+
+    </section>
+
+
+
+    <!-- AD -->
+
+    <div class="ad-container">
+
+        <span>
+            ADVERTISEMENT
+        </span>
+
+    </div>
+
+
+
+    <!-- CALCULATOR -->
+
+    <section class="calculator-card">
+
+        <h2>
+            GST Calculator India
+        </h2>
+
+
+        <label>
+            Enter Amount
+        </label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Example: 1000"
+        >
+
+
+        <label>
+            GST Rate
+        </label>
+
+        <select id="gstRate">
+
+            <option value="5">
+                5%
+            </option>
+
+            <option value="12">
+                12%
+            </option>
+
+            <option value="18" selected>
+                18%
+            </option>
+
+            <option value="28">
+                28%
+            </option>
+
+        </select>
+
+
+        <div class="calculator-buttons">
+
+            <button onclick="calculateGST()">
+                Calculate GST
+            </button>
+
+            <button
+                onclick="resetGST()"
+                class="secondary-btn">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="result"
+            class="calculator-result">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTENT -->
+
+    <article class="seo-content">
+
+        <h2>
+            What is GST?
+        </h2>
+
+        <p>
+
+            GST stands for Goods and Services Tax.
+            It is an indirect tax applied to the supply
+            of goods and services in India.
+
+        </p>
+
+
+        <h2>
+            How to calculate GST?
+        </h2>
+
+        <p>
+
+            GST can be calculated using the following formula:
+
+        </p>
+
+
+        <div class="formula-box">
+
+            GST Amount =
+            Original Amount × GST Rate ÷ 100
+
+        </div>
+
+
+        <p>
+
+            For example, if the original price is
+            ₹1,000 and the GST rate is 18%:
+
+        </p>
+
+
+        <div class="formula-box">
+
+            GST = ₹1,000 × 18 ÷ 100
+
+            <br><br>
+
+            GST = ₹180
+
+            <br><br>
+
+            Total = ₹1,180
+
+        </div>
+
+
+        <h2>
+            GST Calculator FAQs
+        </h2>
+
+
+        <h3>
+            What is 18% GST on ₹1,000?
+        </h3>
+
+        <p>
+
+            18% GST on ₹1,000 is ₹180.
+            The total amount including GST is ₹1,180.
+
+        </p>
+
+
+        <h3>
+            What is CGST and SGST?
+        </h3>
+
+        <p>
+
+            For an intra-state transaction,
+            GST may be divided between CGST and SGST.
+
+            For example, an 18% GST rate can be divided
+            into 9% CGST and 9% SGST.
+
+        </p>
+
+
+        <h3>
+            Is this GST calculator free?
+        </h3>
+
+        <p>
+
+            Yes. ToolMitra's GST calculator is free
+            to use and does not require registration.
+
+        </p>
+
+    </article>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-logo">
+        ⚡ ToolMitra
+    </div>
+
+    <p>
+        Free online tools for everyone.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function calculateGST() {
+
+    const amount =
+        Number(
+            document.getElementById("amount").value
+        );
+
+    const rate =
+        Number(
+            document.getElementById("gstRate").value
+        );
+
+
+    if (!amount || amount < 0) {
+
+        document.getElementById("result")
+            .innerHTML =
+            "Please enter a valid amount.";
+
+        return;
+
+    }
+
+
+    const gst =
+        amount * rate / 100;
+
+
+    const total =
+        amount + gst;
+
+
+    const halfGST =
+        gst / 2;
+
+
+    document.getElementById("result")
+        .innerHTML = `
+
+        <div class="result-row">
+
+            <span>
+                Original Amount
+            </span>
+
+            <strong>
+                ₹${amount.toFixed(2)}
+            </strong>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span>
+                GST (${rate}%)
+            </span>
+
+            <strong>
+                ₹${gst.toFixed(2)}
+            </strong>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span>
+                CGST
+            </span>
+
+            <strong>
+                ₹${halfGST.toFixed(2)}
+            </strong>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span>
+                SGST
+            </span>
+
+            <strong>
+                ₹${halfGST.toFixed(2)}
+            </strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="result-total">
+
+            <span>
+                Total Amount
+            </span>
+
+            <strong>
+                ₹${total.toFixed(2)}
+            </strong>
+
+        </div>
+
+        `;
+
+}
+
+
+
+function resetGST() {
+
+    document.getElementById("amount").value = "";
+
+    document.getElementById("gstRate").value = "18";
+
+    document.getElementById("result").innerHTML = "";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

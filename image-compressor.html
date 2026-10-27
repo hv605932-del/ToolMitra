@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Compressor - Compress Images Online Free | ToolMitra</title>
+
+    <meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size while keeping good quality with ToolMitra Image Compressor.">
+
+    <meta name="keywords" content="image compressor, compress image online, reduce image size, JPG compressor, PNG compressor, WebP compressor">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> →
+            <span>Image Compressor</span>
+        </div>
+
+        <!-- Tool Header -->
+        <div class="tool-header">
+
+            <h1>Image Compressor</h1>
+
+            <p>
+                Compress JPG, PNG and WebP images online for free.
+                Reduce image file size while maintaining good visual quality.
+            </p>
+
+        </div>
+
+        <!-- Tool Card -->
+        <div class="calculator-card">
+
+            <h2>Compress Your Image</h2>
+
+            <label for="imageInput">Choose an image</label>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+            <label for="qualityRange">
+                Compression Quality:
+                <span id="qualityValue">80</span>%
+            </label>
+
+            <input
+                type="range"
+                id="qualityRange"
+                min="10"
+                max="100"
+                value="80"
+            >
+
+            <label for="formatSelect">Output Format</label>
+
+            <select id="formatSelect">
+
+                <option value="image/webp">
+                    WebP - Recommended
+                </option>
+
+                <option value="image/jpeg">
+                    JPG
+                </option>
+
+                <option value="image/png">
+                    PNG
+                </option>
+
+            </select>
+
+            <div class="calculator-buttons">
+
+                <button onclick="compressImage()">
+                    Compress Image
+                </button>
+
+                <button
+                    onclick="resetTool()"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+            <!-- Information -->
+            <div
+                id="imageInfo"
+                class="calculator-result"
+                style="display:none;"
+            >
+
+                <div class="result-row">
+                    <span>Original Size</span>
+                    <strong id="originalSize">-</strong>
+                </div>
+
+                <div class="result-row">
+                    <span>Compressed Size</span>
+                    <strong id="compressedSize">-</strong>
+                </div>
+
+                <div class="result-total">
+                    <span>Size Reduced</span>
+                    <strong id="reduction">-</strong>
+                </div>
+
+            </div>
+
+            <!-- Preview -->
+            <div
+                id="previewArea"
+                style="display:none; margin-top:25px;"
+            >
+
+                <h3>Preview</h3>
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Compressed image preview"
+                    style="
+                        display:block;
+                        max-width:100%;
+                        max-height:400px;
+                        margin:20px auto;
+                        border-radius:10px;
+                    "
+                >
+
+                <a
+                    id="downloadBtn"
+                    href="#"
+                    download="compressed-image.webp"
+                    class="tool-link"
+                >
+                    Download Compressed Image
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Ad Placeholder -->
+        <div
+            style="
+                max-width:728px;
+                min-height:90px;
+                margin:40px auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#f5f5f5;
+                border-radius:10px;
+                color:#999;
+            "
+        >
+            Advertisement
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>Free Online Image Compressor</h2>
+
+            <p>
+                ToolMitra Image Compressor is a free browser-based tool
+                that helps you reduce the file size of your images.
+                You can compress JPG, PNG and WebP images without
+                installing additional software.
+            </p>
+
+            <p>
+                Smaller images can help websites load faster and can
+                also make it easier to share images through email,
+                messaging apps and online forms.
+            </p>
+
+
+            <h2>How to Compress an Image Online</h2>
+
+            <h3>1. Select your image</h3>
+
+            <p>
+                Click the file selection button and choose a JPG,
+                PNG or WebP image from your computer.
+            </p>
+
+            <h3>2. Choose compression quality</h3>
+
+            <p>
+                Use the quality slider to choose the desired balance
+                between image quality and file size. Lower quality
+                generally produces a smaller file.
+            </p>
+
+            <h3>3. Select output format</h3>
+
+            <p>
+                WebP is recommended when you want a modern format with
+                good compression. JPG is useful for photographs, while
+                PNG is useful when you need lossless image output.
+            </p>
+
+            <h3>4. Compress and download</h3>
+
+            <p>
+                Click the Compress Image button. After processing,
+                you can preview the result and download the compressed
+                image.
+            </p>
+
+
+            <h2>Why Compress Images?</h2>
+
+            <p>
+                Large image files can take longer to upload, download
+                and display. Compressing images can reduce their file
+                size and make them easier to store and share.
+            </p>
+
+            <p>
+                Website owners can also benefit from appropriately
+                optimized images because smaller image files can
+                contribute to faster page loading.
+            </p>
+
+
+            <h2>Is This Image Compressor Free?</h2>
+
+            <p>
+                Yes. ToolMitra's image compressor is designed to be
+                free to use. There is no software installation required.
+            </p>
+
+
+            <h2>Are My Images Uploaded?</h2>
+
+            <p>
+                The compression process is performed directly in your
+                browser using standard web technologies. The image is
+                processed locally rather than being sent to a server
+                by this tool.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Can I compress JPG images?</h3>
+
+            <p>
+                Yes. JPG images are supported by the Image Compressor.
+            </p>
+
+            <h3>Can I compress PNG images?</h3>
+
+            <p>
+                Yes. PNG files can be selected and processed. Keep in
+                mind that PNG compression behaves differently from
+                JPEG and WebP because PNG is a lossless format.
+            </p>
+
+            <h3>Is WebP better for compression?</h3>
+
+            <p>
+                WebP can provide a good balance between file size and
+                image quality, which is why it is the recommended
+                default output format in this tool.
+            </p>
+
+            <h3>Does lowering quality reduce file size?</h3>
+
+            <p>
+                Usually, yes. For lossy formats such as JPEG and WebP,
+                reducing quality generally reduces the resulting file
+                size.
+            </p>
+
+            <h3>Do I need to install software?</h3>
+
+            <p>
+                No. The tool runs directly in your web browser.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding:30px;">
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+        <p>
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const imageInput = document.getElementById("imageInput");
+
+        const qualityRange = document.getElementById("qualityRange");
+
+        const qualityValue = document.getElementById("qualityValue");
+
+        const formatSelect = document.getElementById("formatSelect");
+
+        const imageInfo = document.getElementById("imageInfo");
+
+        const originalSize = document.getElementById("originalSize");
+
+        const compressedSize = document.getElementById("compressedSize");
+
+        const reduction = document.getElementById("reduction");
+
+        const previewArea = document.getElementById("previewArea");
+
+        const previewImage = document.getElementById("previewImage");
+
+        const downloadBtn = document.getElementById("downloadBtn");
+
+
+        let selectedFile = null;
+
+        let currentObjectUrl = null;
+
+
+        // Quality slider
+
+        qualityRange.addEventListener("input", function () {
+
+            qualityValue.textContent = this.value;
+
+        });
+
+
+        // File selection
+
+        imageInput.addEventListener("change", function () {
+
+            selectedFile = this.files[0];
+
+            if (!selectedFile) {
+                return;
+            }
+
+            imageInfo.style.display = "none";
+
+            previewArea.style.display = "none";
+
+        });
+
+
+        // Format extension
+
+        function getExtension(format) {
+
+            if (format === "image/jpeg") {
+                return "jpg";
+            }
+
+            if (format === "image/png") {
+                return "png";
+            }
+
+            return "webp";
+
+        }
+
+
+        // Format file size
+
+        function formatBytes(bytes) {
+
+            if (bytes === 0) {
+                return "0 Bytes";
+            }
+
+            const units = [
+                "Bytes",
+                "KB",
+                "MB",
+                "GB"
+            ];
+
+            const index = Math.floor(
+                Math.log(bytes) / Math.log(1024)
+            );
+
+            return (
+                parseFloat(
+                    (bytes / Math.pow(1024, index)).toFixed(2)
+                )
+                + " "
+                + units[index]
+            );
+
+        }
+
+
+        // Compress image
+
+        function compressImage() {
+
+            if (!selectedFile) {
+
+                alert("Please select an image first.");
+
+                return;
+
+            }
+
+
+            const reader = new FileReader();
+
+
+            reader.onload = function (event) {
+
+                const img = new Image();
+
+
+                img.onload = function () {
+
+                    const canvas = document.createElement("canvas");
+
+                    const ctx = canvas.getContext("2d");
+
+
+                    canvas.width = img.width;
+
+                    canvas.height = img.height;
+
+
+                    // White background for JPG
+                    const selectedFormat = formatSelect.value;
+
+                    if (selectedFormat === "image/jpeg") {
+
+                        ctx.fillStyle = "#ffffff";
+
+                        ctx.fillRect(
+                            0,
+                            0,
+                            canvas.width,
+                            canvas.height
+                        );
+
+                    }
+
+
+                    ctx.drawImage(
+                        img,
+                        0,
+                        0,
+                        canvas.width,
+                        canvas.height
+                    );
+
+
+                    const quality =
+                        Number(qualityRange.value) / 100;
+
+
+                    canvas.toBlob(
+                        function (blob) {
+
+                            if (!blob) {
+
+                                alert(
+                                    "Unable to compress this image. Please try another file."
+                                );
+
+                                return;
+
+                            }
+
+
+                            // Revoke previous object URL
+                            if (currentObjectUrl) {
+
+                                URL.revokeObjectURL(
+                                    currentObjectUrl
+                                );
+
+                            }
+
+
+                            currentObjectUrl =
+                                URL.createObjectURL(blob);
+
+
+                            // Preview
+                            previewImage.src =
+                                currentObjectUrl;
+
+
+                            // Download
+                            const extension =
+                                getExtension(
+                                    selectedFormat
+                                );
+
+
+                            downloadBtn.href =
+                                currentObjectUrl;
+
+
+                            downloadBtn.download =
+                                "compressed-image."
+                                + extension;
+
+
+                            // Sizes
+                            originalSize.textContent =
+                                formatBytes(
+                                    selectedFile.size
+                                );
+
+
+                            compressedSize.textContent =
+                                formatBytes(
+                                    blob.size
+                                );
+
+
+                            const reductionPercent =
+                                (
+                                    (
+                                        selectedFile.size -
+                                        blob.size
+                                    )
+                                    /
+                                    selectedFile.size
+                                ) * 100;
+
+
+                            if (reductionPercent > 0) {
+
+                                reduction.textContent =
+                                    reductionPercent.toFixed(1)
+                                    + "% smaller";
+
+                            } else {
+
+                                reduction.textContent =
+                                    "No size reduction";
+
+                            }
+
+
+                            imageInfo.style.display =
+                                "block";
+
+
+                            previewArea.style.display =
+                                "block";
+
+                        },
+
+                        selectedFormat,
+
+                        quality
+
+                    );
+
+                };
+
+
+                img.src = event.target.result;
+
+            };
+
+
+            reader.readAsDataURL(selectedFile);
+
+        }
+
+
+        // Reset tool
+
+        function resetTool() {
+
+            imageInput.value = "";
+
+            selectedFile = null;
+
+            imageInfo.style.display = "none";
+
+            previewArea.style.display = "none";
+
+            previewImage.src = "";
+
+            if (currentObjectUrl) {
+
+                URL.revokeObjectURL(
+                    currentObjectUrl
+                );
+
+                currentObjectUrl = null;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

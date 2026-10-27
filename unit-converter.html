@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Free Unit Converter - Convert length, weight, temperature and common units online with ToolMitra.">
+
+    <meta name="keywords"
+        content="unit converter, length converter, weight converter, temperature converter, free unit converter">
+
+    <meta name="author" content="ToolMitra">
+
+    <title>Unit Converter - Free Online Unit Conversion Tool | ToolMitra</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <span>⚡</span>
+
+        ToolMitra
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="../index.html">Home</a>
+
+        <a href="../index.html#tools">Tools</a>
+
+        <a href="../pages/about.html">About</a>
+
+        <button id="darkModeBtn" class="dark-btn">
+            🌙
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="tool-page-container">
+
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="../index.html">Home</a>
+
+        &nbsp; / &nbsp;
+
+        Unit Converter
+
+    </div>
+
+
+
+    <!-- Tool Header -->
+
+    <div class="tool-header">
+
+        <h1>Unit Converter</h1>
+
+        <p>
+            Convert length, weight and temperature units quickly
+            with this free online unit converter.
+        </p>
+
+    </div>
+
+
+
+    <!-- Advertisement -->
+
+    <div class="ad-container">
+
+        <span>ADVERTISEMENT</span>
+
+    </div>
+
+
+
+    <!-- ================= CONVERTER ================= -->
+
+    <div class="calculator-card">
+
+
+        <h2>🔄 Convert Units</h2>
+
+
+        <label for="conversionType">
+            Conversion Type
+        </label>
+
+        <select id="conversionType">
+
+            <option value="length">
+                Length
+            </option>
+
+            <option value="weight">
+                Weight
+            </option>
+
+            <option value="temperature">
+                Temperature
+            </option>
+
+        </select>
+
+
+
+        <label for="fromUnit">
+            From
+        </label>
+
+        <select id="fromUnit"></select>
+
+
+
+        <label for="toUnit">
+            To
+        </label>
+
+        <select id="toUnit"></select>
+
+
+
+        <label for="inputValue">
+            Value
+        </label>
+
+        <input
+            type="number"
+            id="inputValue"
+            placeholder="Enter value"
+            step="any"
+        >
+
+
+
+        <div class="calculator-buttons">
+
+            <button onclick="convertUnit()">
+                Convert
+            </button>
+
+            <button
+                onclick="clearConverter()"
+                class="secondary-btn">
+
+                Clear
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            id="conversionResult"
+            class="calculator-result"
+            style="display:none;">
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= SEO CONTENT ================= -->
+
+    <div class="seo-content">
+
+
+        <h2>What Is a Unit Converter?</h2>
+
+        <p>
+            A unit converter helps you convert a measurement
+            from one unit to another. For example, you can
+            convert kilometres to miles, kilograms to pounds,
+            or Celsius to Fahrenheit.
+        </p>
+
+
+
+        <h2>Length Conversion</h2>
+
+        <p>
+            Length conversion is useful for converting units
+            such as kilometres, metres, centimetres, inches,
+            feet, yards and miles.
+        </p>
+
+
+
+        <h2>Weight Conversion</h2>
+
+        <p>
+            Weight conversion allows you to convert between
+            kilograms, grams, pounds and ounces.
+        </p>
+
+
+
+        <h2>Temperature Conversion</h2>
+
+        <p>
+            Temperature can be converted between Celsius,
+            Fahrenheit and Kelvin depending on your requirement.
+        </p>
+
+
+
+        <h2>Common Unit Conversions</h2>
+
+        <h3>Kilometres to Miles</h3>
+
+        <p>
+            To convert kilometres to miles, multiply the
+            kilometre value by approximately 0.621371.
+        </p>
+
+
+        <div class="formula-box">
+
+            Miles = Kilometres × 0.621371
+
+        </div>
+
+
+
+        <h3>Kilograms to Pounds</h3>
+
+        <p>
+            One kilogram is approximately equal to
+            2.20462 pounds.
+        </p>
+
+
+        <div class="formula-box">
+
+            Pounds = Kilograms × 2.20462
+
+        </div>
+
+
+
+        <h3>Celsius to Fahrenheit</h3>
+
+        <p>
+            Celsius can be converted to Fahrenheit using
+            the following formula.
+        </p>
+
+
+        <div class="formula-box">
+
+            Fahrenheit = (Celsius × 9/5) + 32
+
+        </div>
+
+
+
+        <!-- ================= FAQ ================= -->
+
+        <h2>Frequently Asked Questions</h2>
+
+
+        <h3>What units can I convert?</h3>
+
+        <p>
+            This tool currently supports common length,
+            weight and temperature conversions.
+        </p>
+
+
+        <h3>Is this unit converter free?</h3>
+
+        <p>
+            Yes. ToolMitra's unit converter is free to use.
+        </p>
+
+
+        <h3>Can I use this converter on mobile?</h3>
+
+        <p>
+            Yes. The converter is designed to work on
+            desktop and mobile devices.
+        </p>
+
+
+        <h3>Do I need to install anything?</h3>
+
+        <p>
+            No. You can use the converter directly in your
+            web browser without installing software.
+        </p>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        ⚡ ToolMitra
+
+    </div>
+
+
+    <p>
+        Free online tools for everyone.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="../pages/privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="../pages/terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="../pages/contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 ToolMitra. All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================= CONVERTER SCRIPT ================= -->
+
+<script>
+
+const conversionUnits = {
+
+    length: {
+
+        metre: {
+            name: "Metres",
+            factor: 1
+        },
+
+        kilometre: {
+            name: "Kilometres",
+            factor: 1000
+        },
+
+        centimetre: {
+            name: "Centimetres",
+            factor: 0.01
+        },
+
+        millimetre: {
+            name: "Millimetres",
+            factor: 0.001
+        },
+
+        mile: {
+            name: "Miles",
+            factor: 1609.344
+        },
+
+        yard: {
+            name: "Yards",
+            factor: 0.9144
+        },
+
+        foot: {
+            name: "Feet",
+            factor: 0.3048
+        },
+
+        inch: {
+            name: "Inches",
+            factor: 0.0254
+        }
+
+    },
+
+
+    weight: {
+
+        kilogram: {
+            name: "Kilograms",
+            factor: 1
+        },
+
+        gram: {
+            name: "Grams",
+            factor: 0.001
+        },
+
+        milligram: {
+            name: "Milligrams",
+            factor: 0.000001
+        },
+
+        pound: {
+            name: "Pounds",
+            factor: 0.45359237
+        },
+
+        ounce: {
+            name: "Ounces",
+            factor: 0.028349523125
+        }
+
+    },
+
+
+    temperature: {
+
+        celsius: {
+            name: "Celsius"
+        },
+
+        fahrenheit: {
+            name: "Fahrenheit"
+        },
+
+        kelvin: {
+            name: "Kelvin"
+        }
+
+    }
+
+};
+
+
+
+const conversionType =
+    document.getElementById("conversionType");
+
+const fromUnit =
+    document.getElementById("fromUnit");
+
+const toUnit =
+    document.getElementById("toUnit");
+
+const inputValue =
+    document.getElementById("inputValue");
+
+const conversionResult =
+    document.getElementById("conversionResult");
+
+
+
+function loadUnits() {
+
+    const type = conversionType.value;
+
+    fromUnit.innerHTML = "";
+
+    toUnit.innerHTML = "";
+
+
+    Object.keys(conversionUnits[type]).forEach(unit => {
+
+        const option1 =
+            document.createElement("option");
+
+        option1.value = unit;
+
+        option1.textContent =
+            conversionUnits[type][unit].name;
+
+        fromUnit.appendChild(option1);
+
+
+
+        const option2 =
+            document.createElement("option");
+
+        option2.value = unit;
+
+        option2.textContent =
+            conversionUnits[type][unit].name;
+
+        toUnit.appendChild(option2);
+
+    });
+
+
+    if (type === "length") {
+
+        fromUnit.value = "kilometre";
+
+        toUnit.value = "mile";
+
+    }
+
+
+    if (type === "weight") {
+
+        fromUnit.value = "kilogram";
+
+        toUnit.value = "pound";
+
+    }
+
+
+    if (type === "temperature") {
+
+        fromUnit.value = "celsius";
+
+        toUnit.value = "fahrenheit";
+
+    }
+
+
+    conversionResult.style.display = "none";
+
+}
+
+
+
+conversionType.addEventListener(
+    "change",
+    loadUnits
+);
+
+
+
+function convertTemperature(
+    value,
+    from,
+    to
+) {
+
+    let celsius;
+
+
+    if (from === "celsius") {
+
+        celsius = value;
+
+    } else if (from === "fahrenheit") {
+
+        celsius = (value - 32) * 5 / 9;
+
+    } else {
+
+        celsius = value - 273.15;
+
+    }
+
+
+
+    if (to === "celsius") {
+
+        return celsius;
+
+    }
+
+
+    if (to === "fahrenheit") {
+
+        return (celsius * 9 / 5) + 32;
+
+    }
+
+
+    return celsius + 273.15;
+
+}
+
+
+
+function convertUnit() {
+
+    const value =
+        parseFloat(inputValue.value);
+
+    const type =
+        conversionType.value;
+
+    const from =
+        fromUnit.value;
+
+    const to =
+        toUnit.value;
+
+
+
+    if (isNaN(value)) {
+
+        conversionResult.style.display = "block";
+
+        conversionResult.innerHTML =
+            "Please enter a valid number.";
+
+        return;
+
+    }
+
+
+
+    let result;
+
+
+
+    if (type === "temperature") {
+
+        result =
+            convertTemperature(
+                value,
+                from,
+                to
+            );
+
+    } else {
+
+        const baseValue =
+            value *
+            conversionUnits[type][from].factor;
+
+        result =
+            baseValue /
+            conversionUnits[type][to].factor;
+
+    }
+
+
+
+    conversionResult.style.display = "block";
+
+    conversionResult.innerHTML = `
+
+        <div class="result-total">
+
+            <span>Result</span>
+
+            <span>
+                ${Number(result.toFixed(8))}
+                ${conversionUnits[type][to].name}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+
+function clearConverter() {
+
+    inputValue.value = "";
+
+    conversionResult.style.display = "none";
+
+}
+
+
+
+loadUnits();
+
+</script>
+
+
+</body>
+
+</html>

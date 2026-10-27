@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Free Color Palette Generator - Generate beautiful random color palettes with HEX codes for websites, designs and creative projects.">
+
+    <meta name="keywords"
+        content="color palette generator, color generator, random color palette, HEX color generator, free color tool">
+
+    <meta name="author" content="ToolMitra">
+
+    <title>Color Palette Generator - Free Online Color Tool | ToolMitra</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        .palette-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .color-box {
+            min-height: 220px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .color-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-code {
+            background: rgba(255,255,255,0.9);
+            color: #222;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .palette-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .palette-actions button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #6c5ce7;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+
+            .palette-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .palette-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <span>⚡</span>
+
+        ToolMitra
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="../index.html">Home</a>
+
+        <a href="../index.html#tools">Tools</a>
+
+        <a href="../pages/about.html">About</a>
+
+        <button id="darkModeBtn" class="dark-btn">
+            🌙
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="tool-page-container">
+
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="../index.html">Home</a>
+
+        &nbsp; / &nbsp;
+
+        Color Palette Generator
+
+    </div>
+
+
+
+    <!-- Tool Header -->
+
+    <div class="tool-header">
+
+        <h1>Color Palette Generator</h1>
+
+        <p>
+            Generate beautiful random color palettes with HEX
+            codes for websites, graphics, social media and
+            creative projects.
+        </p>
+
+    </div>
+
+
+
+    <!-- Advertisement -->
+
+    <div class="ad-container">
+
+        <span>ADVERTISEMENT</span>
+
+    </div>
+
+
+
+    <!-- ================= COLOR TOOL ================= -->
+
+    <div class="calculator-card">
+
+
+        <h2>🎨 Generate Color Palette</h2>
+
+
+        <p>
+            Generate five random colors. Click any color to
+            copy its HEX code.
+        </p>
+
+
+
+        <div
+            id="palette"
+            class="palette-container">
+        </div>
+
+
+
+        <div class="palette-actions">
+
+            <button onclick="generatePalette()">
+                🎨 Generate New Palette
+            </button>
+
+            <button
+                onclick="copyPalette()"
+                class="secondary-btn">
+
+                📋 Copy Palette
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            id="paletteMessage"
+            class="calculator-result"
+            style="display:none;">
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= SEO CONTENT ================= -->
+
+    <div class="seo-content">
+
+
+        <h2>What Is a Color Palette?</h2>
+
+        <p>
+            A color palette is a collection of colors that are
+            used together in a design. Designers use color
+            palettes for websites, logos, applications,
+            presentations, social media graphics and other
+            creative projects.
+        </p>
+
+
+
+        <h2>What Is a Color Palette Generator?</h2>
+
+        <p>
+            A color palette generator helps you quickly create
+            combinations of colors without manually selecting
+            every color. ToolMitra's free color palette generator
+            creates a set of random colors and provides their
+            HEX codes.
+        </p>
+
+
+
+        <h2>What Is a HEX Color Code?</h2>
+
+        <p>
+            A HEX color code is a six-character code used to
+            represent a color in digital design. HEX codes
+            normally begin with a hash symbol followed by six
+            letters or numbers.
+        </p>
+
+        <div class="formula-box">
+
+            Example: #6C5CE7
+
+        </div>
+
+
+
+        <h2>Where Can You Use Color Palettes?</h2>
+
+        <h3>Website Design</h3>
+
+        <p>
+            Color palettes can help you choose consistent
+            colors for backgrounds, buttons, headings,
+            cards and other website elements.
+        </p>
+
+
+        <h3>Graphic Design</h3>
+
+        <p>
+            Designers can use generated palettes as a starting
+            point for posters, banners, presentations and
+            other graphics.
+        </p>
+
+
+        <h3>Social Media</h3>
+
+        <p>
+            A consistent color palette can help maintain a
+            recognizable visual style across social media
+            posts and content.
+        </p>
+
+
+
+        <h2>Frequently Asked Questions</h2>
+
+
+        <h3>Is this color palette generator free?</h3>
+
+        <p>
+            Yes. The ToolMitra color palette generator is
+            free to use.
+        </p>
+
+
+        <h3>How many colors does it generate?</h3>
+
+        <p>
+            The generator creates five random colors in each
+            palette.
+        </p>
+
+
+        <h3>Can I copy the HEX codes?</h3>
+
+        <p>
+            Yes. You can click an individual color to copy
+            its HEX code or use the Copy Palette button to
+            copy all five colors.
+        </p>
+
+
+        <h3>Do I need to install software?</h3>
+
+        <p>
+            No. The color generator works directly in your
+            web browser.
+        </p>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        ⚡ ToolMitra
+
+    </div>
+
+
+    <p>
+        Free online tools for everyone.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="../pages/privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <a href="../pages/terms.html">
+            Terms & Conditions
+        </a>
+
+        <a href="../pages/contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 ToolMitra. All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================= COLOR SCRIPT ================= -->
+
+<script>
+
+let currentPalette = [];
+
+
+
+function randomColor() {
+
+    const letters = "0123456789ABCDEF";
+
+    let color = "#";
+
+
+    for (let i = 0; i < 6; i++) {
+
+        color +=
+            letters[
+                Math.floor(
+                    Math.random() * 16
+                )
+            ];
+
+    }
+
+
+    return color;
+
+}
+
+
+
+function generatePalette() {
+
+    const palette =
+        document.getElementById("palette");
+
+
+    palette.innerHTML = "";
+
+    currentPalette = [];
+
+
+    for (let i = 0; i < 5; i++) {
+
+        const color =
+            randomColor();
+
+        currentPalette.push(color);
+
+
+        const box =
+            document.createElement("div");
+
+        box.className = "color-box";
+
+        box.style.backgroundColor =
+            color;
+
+
+        const code =
+            document.createElement("div");
+
+        code.className =
+            "color-code";
+
+        code.textContent =
+            color;
+
+
+        box.appendChild(code);
+
+
+        box.addEventListener(
+            "click",
+            function() {
+
+                copyColor(color);
+
+            }
+        );
+
+
+        palette.appendChild(box);
+
+    }
+
+}
+
+
+
+function copyColor(color) {
+
+    navigator.clipboard.writeText(color)
+        .then(function() {
+
+            showMessage(
+                color + " copied to clipboard!"
+            );
+
+        })
+        .catch(function() {
+
+            showMessage(
+                "Unable to copy. Please copy the HEX code manually."
+            );
+
+        });
+
+}
+
+
+
+function copyPalette() {
+
+    if (currentPalette.length === 0) {
+
+        showMessage(
+            "Generate a palette first."
+        );
+
+        return;
+
+    }
+
+
+    const paletteText =
+        currentPalette.join(", ");
+
+
+    navigator.clipboard.writeText(
+        paletteText
+    )
+    .then(function() {
+
+        showMessage(
+            "Palette copied: " + paletteText
+        );
+
+    })
+    .catch(function() {
+
+        showMessage(
+            "Unable to copy the palette."
+        );
+
+    });
+
+}
+
+
+
+function showMessage(message) {
+
+    const box =
+        document.getElementById(
+            "paletteMessage"
+        );
+
+
+    box.style.display = "block";
+
+    box.textContent = message;
+
+
+    setTimeout(function() {
+
+        box.style.display = "none";
+
+    }, 3000);
+
+}
+
+
+
+generatePalette();
+
+</script>
+
+
+</body>
+
+</html>

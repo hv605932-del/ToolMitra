@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image to WebP Converter - Convert JPG PNG to WebP | ToolMitra</title>
+
+    <meta
+        name="description"
+        content="Convert JPG and PNG images to WebP online for free. Reduce image size and download WebP images directly from your browser with ToolMitra."
+    >
+
+    <meta
+        name="keywords"
+        content="image to webp, JPG to WebP, PNG to WebP, WebP converter, convert image to WebP online"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            <span>Image to WebP</span>
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>Image to WebP Converter</h1>
+
+            <p>
+                Convert JPG and PNG images to WebP online for free.
+                Process your images directly in your browser.
+            </p>
+
+        </div>
+
+
+        <!-- Converter Card -->
+        <div class="calculator-card">
+
+            <h2>Convert Image to WebP</h2>
+
+
+            <label for="imageInput">
+                Choose JPG or PNG Image
+            </label>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+
+            <label for="qualityRange">
+
+                WebP Quality:
+                <span id="qualityValue">85</span>%
+
+            </label>
+
+
+            <input
+                type="range"
+                id="qualityRange"
+                min="10"
+                max="100"
+                value="85"
+            >
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="convertToWebP()">
+                    Convert to WebP
+                </button>
+
+                <button
+                    onclick="clearTool()"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+            <div
+                id="resultBox"
+                class="calculator-result"
+                style="display:none;"
+            >
+
+                <div class="result-row">
+
+                    <span>Original Size</span>
+
+                    <strong id="originalSize">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>WebP Size</span>
+
+                    <strong id="webpSize">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-total">
+
+                    <span>Size Change</span>
+
+                    <strong id="sizeChange">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Preview -->
+            <div
+                id="previewBox"
+                style="
+                    display:none;
+                    margin-top:25px;
+                "
+            >
+
+                <h3>WebP Preview</h3>
+
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Converted WebP image preview"
+                    style="
+                        display:block;
+                        max-width:100%;
+                        max-height:400px;
+                        margin:20px auto;
+                        border-radius:10px;
+                    "
+                >
+
+
+                <a
+                    id="downloadBtn"
+                    href="#"
+                    download="converted-image.webp"
+                    class="tool-link"
+                >
+                    Download WebP Image
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Advertisement Placeholder -->
+        <div
+            style="
+                max-width:728px;
+                min-height:90px;
+                margin:40px auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#f5f5f5;
+                border-radius:10px;
+                color:#999;
+            "
+        >
+
+            Advertisement
+
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>Free Image to WebP Converter</h2>
+
+            <p>
+                ToolMitra Image to WebP Converter lets you convert
+                JPG and PNG images into the modern WebP format
+                directly in your browser.
+            </p>
+
+            <p>
+                WebP images can often provide a useful balance between
+                image quality and file size, making the format popular
+                for websites and online applications.
+            </p>
+
+
+            <h2>How to Convert JPG or PNG to WebP</h2>
+
+
+            <h3>1. Select an image</h3>
+
+            <p>
+                Choose a JPG or PNG image from your computer using
+                the file selection button.
+            </p>
+
+
+            <h3>2. Choose WebP quality</h3>
+
+            <p>
+                Adjust the quality slider according to your needs.
+                Higher quality generally preserves more visual detail,
+                while lower quality can produce a smaller file.
+            </p>
+
+
+            <h3>3. Convert the image</h3>
+
+            <p>
+                Click the Convert to WebP button. Your image will be
+                processed inside your browser.
+            </p>
+
+
+            <h3>4. Download the WebP file</h3>
+
+            <p>
+                After conversion, preview the result and click the
+                Download WebP Image button.
+            </p>
+
+
+            <h2>What is WebP?</h2>
+
+            <p>
+                WebP is an image format designed for efficient web
+                delivery. It supports both lossy and lossless
+                compression and can help reduce image file sizes
+                compared with some traditional formats.
+            </p>
+
+
+            <h2>Why Use WebP Images?</h2>
+
+            <p>
+                Image files can have a significant effect on website
+                loading performance. Using appropriately optimized
+                images can help reduce the amount of data that a
+                browser needs to download.
+            </p>
+
+            <p>
+                WebP is widely used for website images because it can
+                provide good visual quality at relatively small file
+                sizes.
+            </p>
+
+
+            <h2>Is the WebP Converter Free?</h2>
+
+            <p>
+                Yes. ToolMitra provides this converter as a free
+                browser-based utility.
+            </p>
+
+
+            <h2>Are Images Uploaded to a Server?</h2>
+
+            <p>
+                The conversion is performed directly in your browser
+                using the Canvas API. This page does not need to upload
+                your selected image to a server for conversion.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Can I convert JPG to WebP?</h3>
+
+            <p>
+                Yes. JPG images can be converted to WebP using this
+                tool.
+            </p>
+
+
+            <h3>Can I convert PNG to WebP?</h3>
+
+            <p>
+                Yes. PNG images are supported as input.
+            </p>
+
+
+            <h3>Does WebP reduce image size?</h3>
+
+            <p>
+                WebP can produce smaller files depending on the
+                original image, quality setting and image content.
+            </p>
+
+
+            <h3>Can I control WebP quality?</h3>
+
+            <p>
+                Yes. Use the quality slider before converting the image.
+            </p>
+
+
+            <h3>Do I need to install software?</h3>
+
+            <p>
+                No. The converter runs directly in a modern web browser.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        style="
+            text-align:center;
+            padding:30px;
+        "
+    >
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+
+        <p>
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const qualityRange =
+            document.getElementById("qualityRange");
+
+        const qualityValue =
+            document.getElementById("qualityValue");
+
+        const resultBox =
+            document.getElementById("resultBox");
+
+        const previewBox =
+            document.getElementById("previewBox");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+        const downloadBtn =
+            document.getElementById("downloadBtn");
+
+        const originalSize =
+            document.getElementById("originalSize");
+
+        const webpSize =
+            document.getElementById("webpSize");
+
+        const sizeChange =
+            document.getElementById("sizeChange");
+
+
+        let selectedFile = null;
+
+        let currentObjectUrl = null;
+
+
+        // Quality slider
+
+        qualityRange.addEventListener(
+            "input",
+            function () {
+
+                qualityValue.textContent =
+                    this.value;
+
+            }
+        );
+
+
+        // Select image
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                selectedFile =
+                    this.files[0];
+
+                resultBox.style.display =
+                    "none";
+
+                previewBox.style.display =
+                    "none";
+
+            }
+        );
+
+
+        // Format file size
+
+        function formatBytes(bytes) {
+
+            if (bytes === 0) {
+                return "0 Bytes";
+            }
+
+
+            const units = [
+                "Bytes",
+                "KB",
+                "MB",
+                "GB"
+            ];
+
+
+            const index =
+                Math.floor(
+                    Math.log(bytes) /
+                    Math.log(1024)
+                );
+
+
+            return (
+                parseFloat(
+                    (
+                        bytes /
+                        Math.pow(
+                            1024,
+                            index
+                        )
+                    ).toFixed(2)
+                )
+                + " "
+                + units[index]
+            );
+
+        }
+
+
+        // Convert image to WebP
+
+        function convertToWebP() {
+
+            if (!selectedFile) {
+
+                alert(
+                    "Please select an image first."
+                );
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function (event) {
+
+                    const img =
+                        new Image();
+
+
+                    img.onload =
+                        function () {
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+
+                            const ctx =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+
+                            canvas.width =
+                                img.width;
+
+                            canvas.height =
+                                img.height;
+
+
+                            ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                img.width,
+                                img.height
+                            );
+
+
+                            const quality =
+                                Number(
+                                    qualityRange.value
+                                ) / 100;
+
+
+                            canvas.toBlob(
+                                function (blob) {
+
+                                    if (!blob) {
+
+                                        alert(
+                                            "Conversion failed. Please try another image."
+                                        );
+
+                                        return;
+
+                                    }
+
+
+                                    if (
+                                        currentObjectUrl
+                                    ) {
+
+                                        URL.revokeObjectURL(
+                                            currentObjectUrl
+                                        );
+
+                                    }
+
+
+                                    currentObjectUrl =
+                                        URL.createObjectURL(
+                                            blob
+                                        );
+
+
+                                    // Preview
+
+                                    previewImage.src =
+                                        currentObjectUrl;
+
+
+                                    // Download
+
+                                    downloadBtn.href =
+                                        currentObjectUrl;
+
+
+                                    downloadBtn.download =
+                                        "converted-image.webp";
+
+
+                                    // Sizes
+
+                                    originalSize.textContent =
+                                        formatBytes(
+                                            selectedFile.size
+                                        );
+
+
+                                    webpSize.textContent =
+                                        formatBytes(
+                                            blob.size
+                                        );
+
+
+                                    const difference =
+                                        (
+                                            (
+                                                selectedFile.size -
+                                                blob.size
+                                            )
+                                            /
+                                            selectedFile.size
+                                        ) * 100;
+
+
+                                    if (
+                                        difference > 0
+                                    ) {
+
+                                        sizeChange.textContent =
+                                            difference.toFixed(1)
+                                            + "% smaller";
+
+                                    } else {
+
+                                        sizeChange.textContent =
+                                            Math.abs(
+                                                difference
+                                            ).toFixed(1)
+                                            + "% larger";
+
+                                    }
+
+
+                                    resultBox.style.display =
+                                        "block";
+
+
+                                    previewBox.style.display =
+                                        "block";
+
+                                },
+
+                                "image/webp",
+
+                                quality
+
+                            );
+
+                        };
+
+
+                    img.src =
+                        event.target.result;
+
+                };
+
+
+            reader.readAsDataURL(
+                selectedFile
+            );
+
+        }
+
+
+        // Clear
+
+        function clearTool() {
+
+            imageInput.value =
+                "";
+
+            selectedFile =
+                null;
+
+
+            resultBox.style.display =
+                "none";
+
+
+            previewBox.style.display =
+                "none";
+
+
+            previewImage.src =
+                "";
+
+
+            if (currentObjectUrl) {
+
+                URL.revokeObjectURL(
+                    currentObjectUrl
+                );
+
+                currentObjectUrl =
+                    null;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Title Generator - Free Video Title Ideas | ToolMitra</title>
+
+    <meta
+        name="description"
+        content="Generate catchy YouTube video title ideas for free. Enter your topic, choose a niche and tone, and create multiple YouTube titles with ToolMitra."
+    >
+
+    <meta
+        name="keywords"
+        content="YouTube title generator, YouTube title ideas, video title generator, catchy YouTube titles, free YouTube title maker"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            <span>YouTube Title Generator</span>
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>YouTube Title Generator</h1>
+
+            <p>
+                Generate catchy and engaging YouTube title ideas
+                based on your topic, niche and preferred tone.
+            </p>
+
+        </div>
+
+
+        <!-- Generator Card -->
+        <div class="calculator-card">
+
+            <h2>Create YouTube Titles</h2>
+
+
+            <label for="topicInput">
+                Video Topic or Keyword
+            </label>
+
+
+            <input
+                type="text"
+                id="topicInput"
+                placeholder="Example: Best Budget Smartphones in 2026"
+            >
+
+
+            <label for="nicheSelect">
+                Niche
+            </label>
+
+
+            <select id="nicheSelect">
+
+                <option value="general">
+                    General
+                </option>
+
+                <option value="tech">
+                    Technology
+                </option>
+
+                <option value="education">
+                    Education
+                </option>
+
+                <option value="fitness">
+                    Fitness
+                </option>
+
+                <option value="finance">
+                    Finance
+                </option>
+
+                <option value="travel">
+                    Travel
+                </option>
+
+                <option value="gaming">
+                    Gaming
+                </option>
+
+                <option value="food">
+                    Food
+                </option>
+
+            </select>
+
+
+            <label for="toneSelect">
+                Title Tone
+            </label>
+
+
+            <select id="toneSelect">
+
+                <option value="curious">
+                    Curiosity
+                </option>
+
+                <option value="professional">
+                    Professional
+                </option>
+
+                <option value="exciting">
+                    Exciting
+                </option>
+
+                <option value="simple">
+                    Simple & Clear
+                </option>
+
+                <option value="viral">
+                    Viral Style
+                </option>
+
+            </select>
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="generateTitles()">
+                    Generate Titles
+                </button>
+
+
+                <button
+                    onclick="clearTool()"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Results -->
+            <div
+                id="results"
+                style="
+                    display:none;
+                    margin-top:30px;
+                "
+            >
+
+                <h3>
+                    Generated YouTube Titles
+                </h3>
+
+
+                <div id="titleList"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div
+            style="
+                max-width:728px;
+                min-height:90px;
+                margin:40px auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#f5f5f5;
+                border-radius:10px;
+                color:#999;
+            "
+        >
+            Advertisement
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>Free YouTube Title Generator</h2>
+
+            <p>
+                ToolMitra YouTube Title Generator helps creators
+                generate multiple title ideas from a single video
+                topic or keyword.
+            </p>
+
+            <p>
+                A good YouTube title should clearly communicate
+                what the viewer can expect while creating enough
+                curiosity to encourage a click.
+            </p>
+
+
+            <h2>How to Use the YouTube Title Generator</h2>
+
+
+            <h3>1. Enter your video topic</h3>
+
+            <p>
+                Enter the main topic, keyword or idea of your video.
+                For example, you can enter "Best Budget Smartphones".
+            </p>
+
+
+            <h3>2. Select a niche</h3>
+
+            <p>
+                Choose a relevant niche such as Technology,
+                Education, Fitness, Finance, Travel or Gaming.
+            </p>
+
+
+            <h3>3. Choose a tone</h3>
+
+            <p>
+                Select a style such as Curiosity, Professional,
+                Exciting, Simple or Viral.
+            </p>
+
+
+            <h3>4. Generate title ideas</h3>
+
+            <p>
+                Click Generate Titles to create multiple title
+                suggestions that you can review and customize.
+            </p>
+
+
+            <h2>What Makes a Good YouTube Title?</h2>
+
+            <p>
+                Effective titles are usually clear, relevant and
+                specific. They should accurately represent the video
+                instead of making misleading claims.
+            </p>
+
+            <p>
+                Including the main topic or keyword can also help
+                viewers quickly understand what the video is about.
+            </p>
+
+
+            <h2>YouTube Title Tips</h2>
+
+
+            <h3>Keep the main idea clear</h3>
+
+            <p>
+                Viewers should understand the basic topic of the
+                video without having to guess.
+            </p>
+
+
+            <h3>Create curiosity</h3>
+
+            <p>
+                Questions, comparisons and unexpected angles can
+                encourage viewers to learn more.
+            </p>
+
+
+            <h3>Avoid misleading titles</h3>
+
+            <p>
+                Your title should match the actual content of the
+                video. Misleading titles can reduce viewer trust.
+            </p>
+
+
+            <h3>Test different ideas</h3>
+
+            <p>
+                Generate several titles and compare them before
+                choosing the final version.
+            </p>
+
+
+            <h2>Is This an AI YouTube Title Generator?</h2>
+
+            <p>
+                This version uses predefined title patterns and
+                browser-based generation. It does not require an
+                external AI API.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Is the YouTube Title Generator free?</h3>
+
+            <p>
+                Yes. ToolMitra provides this title generator as
+                a free browser-based tool.
+            </p>
+
+
+            <h3>How many titles can I generate?</h3>
+
+            <p>
+                The tool generates multiple title ideas from the
+                topic you provide.
+            </p>
+
+
+            <h3>Can I use these titles for YouTube videos?</h3>
+
+            <p>
+                Yes. You can use the generated ideas as a starting
+                point and customize them to match your video.
+            </p>
+
+
+            <h3>Should I use the generated title exactly as shown?</h3>
+
+            <p>
+                Not necessarily. Treat generated titles as ideas.
+                You should make sure the final title accurately
+                describes your actual video.
+            </p>
+
+
+            <h3>Does the tool send my topic to a server?</h3>
+
+            <p>
+                No external API is required. Title generation
+                happens directly in your browser.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        style="
+            text-align:center;
+            padding:30px;
+        "
+    >
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+
+        <p>
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const topicInput =
+            document.getElementById("topicInput");
+
+        const nicheSelect =
+            document.getElementById("nicheSelect");
+
+        const toneSelect =
+            document.getElementById("toneSelect");
+
+        const results =
+            document.getElementById("results");
+
+        const titleList =
+            document.getElementById("titleList");
+
+
+        // Generate titles
+
+        function generateTitles() {
+
+            const topic =
+                topicInput.value.trim();
+
+
+            const niche =
+                nicheSelect.value;
+
+
+            const tone =
+                toneSelect.value;
+
+
+            if (!topic) {
+
+                alert(
+                    "Please enter your video topic first."
+                );
+
+                topicInput.focus();
+
+                return;
+
+            }
+
+
+            const titles =
+                createTitles(
+                    topic,
+                    niche,
+                    tone
+                );
+
+
+            titleList.innerHTML =
+                "";
+
+
+            titles.forEach(
+                function(title, index) {
+
+                    const item =
+                        document.createElement("div");
+
+
+                    item.style.cssText = `
+                        display:flex;
+                        align-items:center;
+                        gap:10px;
+                        padding:15px;
+                        margin-bottom:12px;
+                        background:#f7f6ff;
+                        border-radius:10px;
+                        border:1px solid #e8e5ff;
+                    `;
+
+
+                    const text =
+                        document.createElement("div");
+
+
+                    text.textContent =
+                        (
+                            index + 1
+                        )
+                        + ". "
+                        + title;
+
+
+                    text.style.cssText = `
+                        flex:1;
+                        font-weight:600;
+                        line-height:1.5;
+                    `;
+
+
+                    const copyButton =
+                        document.createElement("button");
+
+
+                    copyButton.textContent =
+                        "Copy";
+
+
+                    copyButton.style.cssText = `
+                        padding:8px 14px;
+                        border:none;
+                        border-radius:7px;
+                        background:#6c5ce7;
+                        color:white;
+                        cursor:pointer;
+                    `;
+
+
+                    copyButton.onclick =
+                        function() {
+
+                            navigator.clipboard
+                                .writeText(title)
+                                .then(
+                                    function() {
+
+                                        copyButton.textContent =
+                                            "Copied!";
+
+
+                                        setTimeout(
+                                            function() {
+
+                                                copyButton.textContent =
+                                                    "Copy";
+
+                                            },
+                                            1200
+                                        );
+
+                                    }
+                                );
+
+                        };
+
+
+                    item.appendChild(text);
+
+                    item.appendChild(copyButton);
+
+                    titleList.appendChild(item);
+
+                }
+            );
+
+
+            results.style.display =
+                "block";
+
+
+            results.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+
+        // Title patterns
+
+        function createTitles(
+            topic,
+            niche,
+            tone
+        ) {
+
+            const nicheNames = {
+
+                general:
+                    "This Topic",
+
+                tech:
+                    "Tech",
+
+                education:
+                    "Learning",
+
+                fitness:
+                    "Fitness",
+
+                finance:
+                    "Money",
+
+                travel:
+                    "Travel",
+
+                gaming:
+                    "Gaming",
+
+                food:
+                    "Food"
+
+            };
+
+
+            const nicheWord =
+                nicheNames[niche];
+
+
+            let templates = [];
+
+
+            if (tone === "curious") {
+
+                templates = [
+
+                    `What Nobody Tells You About ${topic}`,
+
+                    `I Tried ${topic} — Here's What Happened`,
+
+                    `The Truth About ${topic}`,
+
+                    `Is ${topic} Really Worth It?`,
+
+                    `Before You Try ${topic}, Watch This`,
+
+                    `7 Things You Should Know About ${topic}`,
+
+                    `The Surprising Truth About ${topic}`,
+
+                    `What I Wish I Knew About ${topic}`,
+
+                    `Don't Make This Mistake With ${topic}`,
+
+                    `Everything You Need to Know About ${topic}`
+
+                ];
+
+            }
+
+
+            else if (tone === "professional") {
+
+                templates = [
+
+                    `${topic}: Complete Guide`,
+
+                    `${topic} Explained Step by Step`,
+
+                    `The Complete Guide to ${topic}`,
+
+                    `${topic}: What You Need to Know`,
+
+                    `${topic} — Facts, Tips & Insights`,
+
+                    `${topic}: A Practical Guide`,
+
+                    `Understanding ${topic}`,
+
+                    `${topic}: Important Things to Know`,
+
+                    `${topic} Guide for Beginners`,
+
+                    `${topic}: Expert Tips and Strategies`
+
+                ];
+
+            }
+
+
+            else if (tone === "exciting") {
+
+                templates = [
+
+                    `You Won't Believe These ${topic} Tips!`,
+
+                    `The Ultimate ${topic} Guide!`,
+
+                    `10 Amazing Things About ${topic}`,
+
+                    `${topic} Just Got WAY More Interesting!`,
+
+                    `This Changes Everything About ${topic}`,
+
+                    `The Best ${topic} Tips You Need to Know`,
+
+                    `Try These ${topic} Tips Today!`,
+
+                    `The ${topic} Secrets You Need to See`,
+
+                    `${topic}: The Results Are Surprising!`,
+
+                    `Don't Miss These ${topic} Tips!`
+
+                ];
+
+            }
+
+
+            else if (tone === "simple") {
+
+                templates = [
+
+                    `${topic} Explained Simply`,
+
+                    `${topic} for Beginners`,
+
+                    `How to Understand ${topic}`,
+
+                    `${topic} Made Easy`,
+
+                    `A Simple Guide to ${topic}`,
+
+                    `How ${topic} Works`,
+
+                    `${topic}: Easy Tips for Beginners`,
+
+                    `Learn ${topic} Step by Step`,
+
+                    `${topic} Basics You Should Know`,
+
+                    `${topic} in Simple Words`
+
+                ];
+
+            }
+
+
+            else {
+
+                templates = [
+
+                    `${topic}: 7 Things You Need to Know`,
+
+                    `I Tested ${topic} — Here's the Result`,
+                    `${topic} Is Changing Everything!`,
+
+                    `The ${topic} Trick Everyone Should Know`,
+
+                    `You Need to See This Before ${topic}`,
+
+                    `10 ${topic} Tips That Actually Work`,
+
+                    `Stop Doing This With ${topic}`,
+
+                    `${topic}: The Secret Nobody Talks About`,
+
+                    `The Biggest Mistakes With ${topic}`,
+
+                    `${topic}: Watch This Before You Start`
+
+                ];
+
+            }
+
+
+            // Add niche context to selected titles
+
+            if (niche !== "general") {
+
+                templates = templates.map(
+                    function(title, index) {
+
+                        if (
+                            index === 2 ||
+                            index === 6
+                        ) {
+
+                            return (
+                                title
+                                + ` | ${nicheWord}`
+                            );
+
+                        }
+
+                        return title;
+
+                    }
+                );
+
+            }
+
+
+            return templates;
+
+        }
+
+
+        // Clear
+
+        function clearTool() {
+
+            topicInput.value =
+                "";
+
+            titleList.innerHTML =
+                "";
+
+            results.style.display =
+                "none";
+
+            topicInput.focus();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

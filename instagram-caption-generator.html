@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instagram Caption Generator - Free Captions | ToolMitra</title>
+
+    <meta name="description"
+        content="Generate Instagram captions instantly with ToolMitra's free Instagram Caption Generator. Create captions for travel, fitness, business, lifestyle and more.">
+
+    <meta name="keywords"
+        content="Instagram caption generator, free Instagram captions, caption generator, Instagram captions">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> /
+            Instagram Caption Generator
+        </div>
+
+        <div class="tool-header">
+
+            <h1>Instagram Caption Generator</h1>
+
+            <p>
+                Create engaging Instagram captions instantly.
+                Choose your topic, style and generate caption ideas for your posts.
+            </p>
+
+        </div>
+
+
+        <div class="calculator-card">
+
+            <h2>Generate Instagram Caption</h2>
+
+            <label for="topic">What is your post about?</label>
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="Example: Beach vacation"
+            >
+
+
+            <label for="category">Category</label>
+
+            <select id="category">
+
+                <option value="General">General</option>
+                <option value="Travel">Travel</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Food">Food</option>
+                <option value="Business">Business</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Photography">Photography</option>
+
+            </select>
+
+
+            <label for="tone">Caption Style</label>
+
+            <select id="tone">
+
+                <option value="Casual">Casual</option>
+                <option value="Funny">Funny</option>
+                <option value="Inspirational">Inspirational</option>
+                <option value="Professional">Professional</option>
+                <option value="Trendy">Trendy</option>
+                <option value="Simple">Simple</option>
+
+            </select>
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="generateCaptions()">
+                    Generate Captions
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="clearGenerator()">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                id="captionResults"
+                class="calculator-result"
+                style="display:none;">
+            </div>
+
+        </div>
+
+
+        <div class="seo-content">
+
+            <h2>What is an Instagram Caption Generator?</h2>
+
+            <p>
+                An Instagram Caption Generator helps you create caption ideas
+                for Instagram posts quickly. Instead of spending time thinking
+                about what to write, you can enter your topic and generate
+                multiple caption ideas.
+            </p>
+
+
+            <h2>How to Use the Instagram Caption Generator</h2>
+
+            <h3>1. Enter your topic</h3>
+
+            <p>
+                Enter the subject of your Instagram post, such as a travel
+                destination, workout, food, product or personal experience.
+            </p>
+
+
+            <h3>2. Select a category</h3>
+
+            <p>
+                Choose a category that best matches your post.
+            </p>
+
+
+            <h3>3. Select a style</h3>
+
+            <p>
+                Select a caption style such as funny, inspirational,
+                professional or trendy.
+            </p>
+
+
+            <h3>4. Generate captions</h3>
+
+            <p>
+                Click the generate button to get multiple caption ideas.
+                You can copy any caption and use it on Instagram.
+            </p>
+
+
+            <h2>Instagram Caption Ideas</h2>
+
+            <p>
+                Good Instagram captions can make your posts more engaging.
+                Depending on your content, you can use short captions,
+                questions, emojis, motivational phrases or calls to action.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Is this Instagram Caption Generator free?</h3>
+
+            <p>
+                Yes. ToolMitra's Instagram Caption Generator is free to use.
+            </p>
+
+
+            <h3>Do I need to install any software?</h3>
+
+            <p>
+                No. The generator works directly in your web browser.
+            </p>
+
+
+            <h3>Can I copy the generated captions?</h3>
+
+            <p>
+                Yes. Each generated caption includes a copy button.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function generateCaptions() {
+
+            const topic =
+                document.getElementById("topic").value.trim();
+
+            const category =
+                document.getElementById("category").value;
+
+            const tone =
+                document.getElementById("tone").value;
+
+            const results =
+                document.getElementById("captionResults");
+
+
+            if (!topic) {
+
+                results.style.display = "block";
+
+                results.innerHTML =
+                    "<p>Please enter a topic first.</p>";
+
+                return;
+            }
+
+
+            let captions = [];
+
+
+            if (tone === "Funny") {
+
+                captions = [
+
+                    `Me pretending I know what I'm doing with ${topic} 😂`,
+
+                    `${topic}, but make it funny 😎`,
+
+                    `Just another day with ${topic} and zero regrets 😂`,
+
+                    `POV: ${topic} became the main character.`,
+
+                    `${topic} looked like a good idea... and it was! 😂`
+
+                ];
+
+            }
+
+            else if (tone === "Inspirational") {
+
+                captions = [
+
+                    `Keep going. Keep growing. ${topic} is part of the journey ✨`,
+
+                    `Small moments. Big memories. ❤️`,
+
+                    `Believe in the process and enjoy the journey.`,
+
+                    `Every moment has a story. This is mine. ✨`,
+
+                    `Creating memories, one moment at a time.`
+
+                ];
+
+            }
+
+            else if (tone === "Professional") {
+
+                captions = [
+
+                    `Building better experiences through ${topic}.`,
+
+                    `Focused on progress, growth and meaningful results.`,
+
+                    `${topic} — another step forward.`,
+
+                    `Turning ideas into meaningful outcomes.`,
+
+                    `Progress starts with consistent action.`
+
+                ];
+
+            }
+
+            else if (tone === "Trendy") {
+
+                captions = [
+
+                    `${topic} hits different ✨`,
+
+                    `Currently obsessed with this moment 🔥`,
+
+                    `Main character energy ✨`,
+
+                    `This is your sign to try ${topic}. 👀`,
+
+                    `Just vibes. No explanation needed. 😎`
+
+                ];
+
+            }
+
+            else if (tone === "Simple") {
+
+                captions = [
+
+                    `${topic} ✨`,
+
+                    `Good times. Great memories. ❤️`,
+
+                    `Just enjoying the moment.`,
+
+                    `A moment worth remembering.`,
+
+                    `Life lately ✨`
+
+                ];
+
+            }
+
+            else {
+
+                captions = [
+
+                    `Making memories with ${topic} ✨`,
+
+                    `A little moment worth sharing. ❤️`,
+
+                    `Life is better when you enjoy the little things.`,
+
+                    `${topic} and good vibes only. ✨`,
+
+                    `Just another beautiful moment.`
+
+                ];
+
+            }
+
+
+            let html = `<h3>Caption Ideas</h3>`;
+
+
+            captions.forEach((caption, index) => {
+
+                html += `
+
+                    <div style="
+                        padding:15px;
+                        margin:10px 0;
+                        background:white;
+                        border-radius:10px;
+                        border:1px solid #eee;
+                    ">
+
+                        <p style="margin:0 0 10px;">
+                            ${caption}
+                        </p>
+
+                        <button
+                            onclick="copyCaption(${index})"
+                            style="
+                                padding:8px 14px;
+                                border:none;
+                                border-radius:6px;
+                                background:#6c5ce7;
+                                color:white;
+                                cursor:pointer;
+                            "
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            results.innerHTML = html;
+
+            results.style.display = "block";
+
+
+            window.generatedCaptions = captions;
+
+        }
+
+
+        function copyCaption(index) {
+
+            const caption =
+                window.generatedCaptions[index];
+
+            navigator.clipboard.writeText(caption);
+
+            alert("Caption copied!");
+
+        }
+
+
+        function clearGenerator() {
+
+            document.getElementById("topic").value = "";
+
+            document.getElementById("captionResults").style.display =
+                "none";
+
+        }
+
+    </script>
+
+</body>
+</html>

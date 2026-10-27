@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Code Generator - Free Online QR Code Maker | ToolMitra</title>
+
+    <meta name="description"
+        content="Create free QR codes for URLs, text, phone numbers and more with ToolMitra's online QR Code Generator.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            QR Code Generator
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>QR Code Generator</h1>
+
+            <p>
+                Create a QR code for a website, text, phone number,
+                email or any other information with our free online
+                QR Code Generator.
+            </p>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div class="ad-box">
+            Advertisement
+        </div>
+
+
+        <!-- QR Generator -->
+        <div class="calculator-card">
+
+            <h2>Create Your QR Code</h2>
+
+
+            <label for="qrText">
+                Enter Text or URL
+            </label>
+
+            <textarea
+                id="qrText"
+                placeholder="Example: https://toolmitra.com"
+                style="
+                    width:100%;
+                    min-height:120px;
+                    padding:15px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    resize:vertical;
+                    font-size:16px;
+                    margin-bottom:20px;
+                "
+            ></textarea>
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="generateQR()">
+                    Generate QR Code
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="clearQR()">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- QR Result -->
+            <div
+                id="qrResult"
+                class="calculator-result"
+                style="
+                    display:none;
+                    text-align:center;
+                "
+            >
+
+                <h3>Your QR Code</h3>
+
+                <img
+                    id="qrImage"
+                    src=""
+                    alt="Generated QR Code"
+                    style="
+                        max-width:300px;
+                        width:100%;
+                        margin:20px auto;
+                        display:block;
+                    "
+                >
+
+
+                <button onclick="downloadQR()">
+                    Download QR Code
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>What is a QR Code?</h2>
+
+            <p>
+                A QR code is a two-dimensional barcode that can
+                store information such as website URLs, text,
+                contact details and other data.
+            </p>
+
+            <p>
+                Smartphones can scan QR codes using their camera
+                or a QR scanning application.
+            </p>
+
+
+            <h2>How to Create a QR Code?</h2>
+
+            <ol>
+
+                <li>
+                    Enter your text, website URL or other information.
+                </li>
+
+                <li>
+                    Click the Generate QR Code button.
+                </li>
+
+                <li>
+                    Your QR code will appear below the form.
+                </li>
+
+                <li>
+                    Click Download QR Code to save the image.
+                </li>
+
+            </ol>
+
+
+            <h2>What Can You Put in a QR Code?</h2>
+
+            <ul>
+
+                <li>Website URLs</li>
+
+                <li>Plain text</li>
+
+                <li>Phone numbers</li>
+
+                <li>Email addresses</li>
+
+                <li>Contact information</li>
+
+                <li>Social media links</li>
+
+                <li>Wi-Fi information</li>
+
+            </ul>
+
+
+            <h2>Where Are QR Codes Used?</h2>
+
+            <p>
+                QR codes are commonly used on business cards,
+                product packaging, restaurant menus, posters,
+                advertisements, payments and websites.
+            </p>
+
+
+            <h2>QR Code Example</h2>
+
+            <p>
+                You can enter a URL such as:
+            </p>
+
+            <div class="formula-box">
+                https://example.com
+            </div>
+
+            <p>
+                The generator will create a QR code that can be
+                scanned to open the URL.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Is this QR Code Generator free?</h3>
+
+            <p>
+                Yes. ToolMitra's QR Code Generator is free to use.
+            </p>
+
+
+            <h3>Can I create a QR code for a website?</h3>
+
+            <p>
+                Yes. Enter the complete website URL and click
+                Generate QR Code.
+            </p>
+
+
+            <h3>Can I download the QR code?</h3>
+
+            <p>
+                Yes. After generating the QR code, use the
+                Download QR Code button.
+            </p>
+
+
+            <h3>Does the QR code expire?</h3>
+
+            <p>
+                The QR code generated by this page contains the
+                information you provide. The QR image itself does
+                not have an automatic expiration date. However,
+                if it points to a website or other external
+                resource, that destination must remain available.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+    <script>
+
+        function generateQR() {
+
+            const text =
+                document.getElementById("qrText").value.trim();
+
+
+            if (!text) {
+
+                alert("Please enter some text or a URL.");
+
+                return;
+
+            }
+
+
+            const qrImage =
+                document.getElementById("qrImage");
+
+
+            /*
+                QRCode.js creates the QR code in a temporary
+                container. We then use the generated image.
+            */
+
+            const temporaryContainer =
+                document.createElement("div");
+
+
+            temporaryContainer.style.position = "absolute";
+
+            temporaryContainer.style.left = "-9999px";
+
+            document.body.appendChild(
+                temporaryContainer
+            );
+
+
+            new QRCode(
+                temporaryContainer,
+                {
+                    text: text,
+                    width: 300,
+                    height: 300,
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+                }
+            );
+
+
+            setTimeout(function() {
+
+                const generatedImage =
+                    temporaryContainer.querySelector("img");
+
+
+                if (generatedImage) {
+
+                    qrImage.src =
+                        generatedImage.src;
+
+                } else {
+
+                    const canvas =
+                        temporaryContainer.querySelector("canvas");
+
+                    if (canvas) {
+
+                        qrImage.src =
+                            canvas.toDataURL("image/png");
+
+                    }
+
+                }
+
+
+                document.body.removeChild(
+                    temporaryContainer
+                );
+
+
+                document.getElementById("qrResult")
+                    .style.display = "block";
+
+
+            }, 100);
+
+        }
+
+
+        function downloadQR() {
+
+            const qrImage =
+                document.getElementById("qrImage");
+
+
+            if (!qrImage.src) {
+
+                alert("Generate a QR code first.");
+
+                return;
+
+            }
+
+
+            const link =
+                document.createElement("a");
+
+
+            link.href =
+                qrImage.src;
+
+
+            link.download =
+                "toolmitra-qr-code.png";
+
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            document.body.removeChild(link);
+
+        }
+
+
+        function clearQR() {
+
+            document.getElementById("qrText").value = "";
+
+            document.getElementById("qrImage").src = "";
+
+            document.getElementById("qrResult")
+                .style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

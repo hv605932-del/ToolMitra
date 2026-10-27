@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Text Summarizer - Free Online Text Summarizer | ToolMitra</title>
+
+    <meta
+        name="description"
+        content="Summarize long text online for free. ToolMitra Text Summarizer creates a shorter summary from articles, notes and other text directly in your browser."
+    >
+
+    <meta
+        name="keywords"
+        content="text summarizer, online text summarizer, summarize text, article summarizer, free summarizer"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            <span>Text Summarizer</span>
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>Free Text Summarizer</h1>
+
+            <p>
+                Summarize long text, articles and notes into a shorter
+                version quickly and easily.
+            </p>
+
+        </div>
+
+
+        <!-- Summarizer Card -->
+        <div class="calculator-card">
+
+            <h2>Summarize Your Text</h2>
+
+
+            <label for="textInput">
+                Enter or paste your text
+            </label>
+
+
+            <textarea
+                id="textInput"
+                placeholder="Paste your article, notes or other text here..."
+                style="
+                    width:100%;
+                    min-height:260px;
+                    padding:15px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    font-size:16px;
+                    resize:vertical;
+                    box-sizing:border-box;
+                    margin-bottom:20px;
+                "
+            ></textarea>
+
+
+            <!-- Summary Length -->
+            <label for="summaryLength">
+                Summary Length
+            </label>
+
+
+            <select id="summaryLength">
+
+                <option value="short">
+                    Short
+                </option>
+
+                <option value="medium" selected>
+                    Medium
+                </option>
+
+                <option value="long">
+                    Long
+                </option>
+
+            </select>
+
+
+            <!-- Buttons -->
+            <div class="calculator-buttons">
+
+                <button onclick="summarizeText()">
+                    Summarize Text
+                </button>
+
+
+                <button
+                    onclick="clearTool()"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Input Stats -->
+            <div
+                class="calculator-result"
+                style="margin-top:25px;"
+            >
+
+                <div class="result-row">
+
+                    <span>Input Words</span>
+
+                    <strong id="inputWords">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Input Characters</span>
+
+                    <strong id="inputCharacters">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Summary -->
+            <div
+                id="summaryBox"
+                style="
+                    display:none;
+                    margin-top:25px;
+                "
+            >
+
+                <h3>Your Summary</h3>
+
+
+                <textarea
+                    id="summaryOutput"
+                    readonly
+                    style="
+                        width:100%;
+                        min-height:220px;
+                        padding:15px;
+                        border:1px solid #ddd;
+                        border-radius:10px;
+                        font-size:16px;
+                        line-height:1.6;
+                        resize:vertical;
+                        box-sizing:border-box;
+                        margin-top:10px;
+                    "
+                ></textarea>
+
+
+                <div
+                    class="calculator-buttons"
+                    style="margin-top:10px;"
+                >
+
+                    <button onclick="copySummary()">
+                        Copy Summary
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="calculator-result"
+                    style="margin-top:20px;"
+                >
+
+                    <div class="result-row">
+
+                        <span>Summary Words</span>
+
+                        <strong id="summaryWords">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span>Reduction</span>
+
+                        <strong id="reduction">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div
+            style="
+                max-width:728px;
+                min-height:90px;
+                margin:40px auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#f5f5f5;
+                border-radius:10px;
+                color:#999;
+            "
+        >
+            Advertisement
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>Free Online Text Summarizer</h2>
+
+            <p>
+                ToolMitra Text Summarizer helps you turn long text
+                into a shorter version containing the most important
+                sentences.
+            </p>
+
+            <p>
+                You can use it for articles, study notes, research
+                material, blog content and other text where you need
+                a quick overview.
+            </p>
+
+
+            <h2>How Does the Text Summarizer Work?</h2>
+
+            <p>
+                This browser-based summarizer analyzes the sentences
+                in your text and gives higher importance to sentences
+                containing frequently used meaningful words.
+            </p>
+
+            <p>
+                The most relevant sentences are then selected and
+                arranged according to their original position in the
+                text.
+            </p>
+
+
+            <h2>How to Summarize Text</h2>
+
+
+            <h3>1. Paste your text</h3>
+
+            <p>
+                Copy your article, notes or other content and paste
+                it into the text box.
+            </p>
+
+
+            <h3>2. Choose summary length</h3>
+
+            <p>
+                Choose Short, Medium or Long depending on how much
+                of the original content you want to retain.
+            </p>
+
+
+            <h3>3. Generate the summary</h3>
+
+            <p>
+                Click the Summarize Text button to generate a shorter
+                version of your content.
+            </p>
+
+
+            <h3>4. Copy the result</h3>
+
+            <p>
+                Once the summary is generated, use the Copy Summary
+                button to copy it.
+            </p>
+
+
+            <h2>Who Can Use a Text Summarizer?</h2>
+
+            <p>
+                Students can use summarization to review notes and
+                understand long reading material more quickly.
+            </p>
+
+            <p>
+                Writers, researchers, bloggers and professionals can
+                also use summaries to get a quick overview of longer
+                documents.
+            </p>
+
+
+            <h2>What Makes a Good Summary?</h2>
+
+            <p>
+                A useful summary should be significantly shorter than
+                the original text while preserving its main ideas and
+                important information.
+            </p>
+
+
+            <h2>Is This an AI Summarizer?</h2>
+
+            <p>
+                This version of the ToolMitra summarizer uses a
+                browser-based text analysis method rather than a
+                cloud-based AI API. It identifies important sentences
+                from the supplied text.
+            </p>
+
+
+            <h2>Does the Tool Upload My Text?</h2>
+
+            <p>
+                No server upload is required for this summarizer.
+                Processing happens directly in your web browser.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Can I summarize an article?</h3>
+
+            <p>
+                Yes. Paste the article into the text box and choose
+                your preferred summary length.
+            </p>
+
+
+            <h3>Can I summarize study notes?</h3>
+
+            <p>
+                Yes. The tool can help create a shorter version of
+                notes for quick review.
+            </p>
+
+
+            <h3>Does the summarizer work offline?</h3>
+
+            <p>
+                After the page has loaded, the summarization process
+                itself does not require an external API.
+            </p>
+
+
+            <h3>How long should my input text be?</h3>
+
+            <p>
+                Longer text generally gives the sentence-ranking
+                method more information to work with. Very short
+                text may not produce a useful summary.
+            </p>
+
+
+            <h3>Is the summary always accurate?</h3>
+
+            <p>
+                The tool selects important sentences automatically,
+                so you should review the generated summary before
+                using it for important work.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        style="
+            text-align:center;
+            padding:30px;
+        "
+    >
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+
+        <p>
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/terms.html">
+                Terms & Conditions
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const textInput =
+            document.getElementById("textInput");
+
+        const summaryLength =
+            document.getElementById("summaryLength");
+
+        const summaryBox =
+            document.getElementById("summaryBox");
+
+        const summaryOutput =
+            document.getElementById("summaryOutput");
+
+        const inputWords =
+            document.getElementById("inputWords");
+
+        const inputCharacters =
+            document.getElementById("inputCharacters");
+
+        const summaryWords =
+            document.getElementById("summaryWords");
+
+        const reduction =
+            document.getElementById("reduction");
+
+
+        // Count words
+
+        function countWords(text) {
+
+            const trimmed =
+                text.trim();
+
+            if (!trimmed) {
+                return 0;
+            }
+
+            return trimmed
+                .split(/\s+/)
+                .length;
+
+        }
+
+
+        // Update input statistics
+
+        function updateStats() {
+
+            const text =
+                textInput.value;
+
+            inputWords.textContent =
+                countWords(text);
+
+            inputCharacters.textContent =
+                text.length;
+
+        }
+
+
+        textInput.addEventListener(
+            "input",
+            updateStats
+        );
+
+
+        // Remove common stop words
+
+        const stopWords = new Set([
+
+            "the",
+            "a",
+            "an",
+            "and",
+            "or",
+            "but",
+            "if",
+            "then",
+            "than",
+            "to",
+            "of",
+            "in",
+            "on",
+            "for",
+            "with",
+            "at",
+            "by",
+            "from",
+            "is",
+            "are",
+            "was",
+            "were",
+            "be",
+            "been",
+            "being",
+            "this",
+            "that",
+            "these",
+            "those",
+            "it",
+            "its",
+            "as",
+            "into",
+            "about",
+            "after",
+            "before",
+            "during",
+            "while",
+            "which",
+            "who",
+            "what",
+            "when",
+            "where",
+            "why",
+            "how",
+            "can",
+            "could",
+            "should",
+            "would",
+            "will",
+            "may",
+            "might",
+            "has",
+            "have",
+            "had",
+            "do",
+            "does",
+            "did",
+            "not",
+            "no",
+            "yes",
+            "we",
+            "you",
+            "they",
+            "he",
+            "she",
+            "his",
+            "her",
+            "their",
+            "our",
+            "your",
+            "I"
+
+        ]);
+
+
+        // Get useful words
+
+        function getWords(sentence) {
+
+            return sentence
+                .toLowerCase()
+                .replace(/[^a-zA-Z0-9\s]/g, "")
+                .split(/\s+/)
+                .filter(function(word) {
+
+                    return (
+                        word.length > 2 &&
+                        !stopWords.has(word)
+                    );
+
+                });
+
+        }
+
+
+        // Summarize
+
+        function summarizeText() {
+
+            const text =
+                textInput.value.trim();
+
+
+            if (!text) {
+
+                alert(
+                    "Please enter some text first."
+                );
+
+                return;
+
+            }
+
+
+            const sentences =
+                text.match(
+                    /[^.!?]+[.!?]+|[^.!?]+$/g
+                );
+
+
+            if (
+                !sentences ||
+                sentences.length < 2
+            ) {
+
+                alert(
+                    "Please enter at least two sentences for a useful summary."
+                );
+
+                return;
+
+            }
+
+
+            // Word frequency
+
+            const frequency = {};
+
+
+            sentences.forEach(
+                function(sentence) {
+
+                    const words =
+                        getWords(sentence);
+
+
+                    words.forEach(
+                        function(word) {
+
+                            frequency[word] =
+                                (
+                                    frequency[word] ||
+                                    0
+                                ) + 1;
+
+                        }
+                    );
+
+                }
+            );
+
+
+            // Score sentences
+
+            const scoredSentences =
+                sentences.map(
+                    function(sentence, index) {
+
+                        const words =
+                            getWords(sentence);
+
+
+                        let score = 0;
+
+
+                        words.forEach(
+                            function(word) {
+
+                                score +=
+                                    frequency[word] || 0;
+
+                            }
+                        );
+
+
+                        // Slight bonus for longer useful sentences
+
+                        if (words.length >= 8) {
+
+                            score += 2;
+
+                        }
+
+
+                        return {
+
+                            sentence:
+                                sentence.trim(),
+
+                            score:
+                                score,
+
+                            index:
+                                index
+
+                        };
+
+                    }
+                );
+
+
+            // Sort by importance
+
+            scoredSentences.sort(
+                function(a, b) {
+
+                    return b.score - a.score;
+
+                }
+            );
+
+
+            const totalSentences =
+                sentences.length;
+
+
+            let percentage;
+
+
+            if (
+                summaryLength.value === "short"
+            ) {
+
+                percentage = 0.25;
+
+            }
+            else if (
+                summaryLength.value === "long"
+            ) {
+
+                percentage = 0.55;
+
+            }
+            else {
+
+                percentage = 0.40;
+
+            }
+
+
+            let numberToSelect =
+                Math.ceil(
+                    totalSentences *
+                    percentage
+                );
+
+
+            numberToSelect =
+                Math.max(
+                    1,
+                    numberToSelect
+                );
+
+
+            numberToSelect =
+                Math.min(
+                    numberToSelect,
+                    totalSentences
+                );
+
+
+            // Select important sentences
+
+            const selected =
+                scoredSentences
+                    .slice(
+                        0,
+                        numberToSelect
+                    );
+
+
+            // Restore original order
+
+            selected.sort(
+                function(a, b) {
+
+                    return a.index - b.index;
+
+                }
+            );
+
+
+            const summary =
+                selected
+                    .map(
+                        function(item) {
+
+                            return item.sentence;
+
+                        }
+                    )
+                    .join(" ");
+
+
+            summaryOutput.value =
+                summary;
+
+
+            // Summary statistics
+
+            const originalWordCount =
+                countWords(text);
+
+
+            const finalWordCount =
+                countWords(summary);
+
+
+            summaryWords.textContent =
+                finalWordCount;
+
+
+            const reductionPercent =
+                originalWordCount > 0
+                    ? (
+                        (
+                            originalWordCount -
+                            finalWordCount
+                        )
+                        /
+                        originalWordCount
+                    ) * 100
+                    : 0;
+
+
+            reduction.textContent =
+                Math.max(
+                    0,
+                    reductionPercent
+                ).toFixed(1)
+                + "%";
+
+
+            summaryBox.style.display =
+                "block";
+
+
+            summaryOutput.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+
+        // Copy summary
+
+        function copySummary() {
+
+            const summary =
+                summaryOutput.value;
+
+
+            if (!summary) {
+
+                alert(
+                    "Please generate a summary first."
+                );
+
+                return;
+
+            }
+
+
+            navigator.clipboard
+                .writeText(summary)
+                .then(
+                    function() {
+
+                        alert(
+                            "Summary copied successfully!"
+                        );
+
+                    }
+                )
+                .catch(
+                    function() {
+
+                        alert(
+                            "Unable to copy. Please copy the summary manually."
+                        );
+
+                    }
+                );
+
+        }
+
+
+        // Clear
+
+        function clearTool() {
+
+            textInput.value =
+                "";
+
+            summaryOutput.value =
+                "";
+
+            summaryBox.style.display =
+                "none";
+
+            updateStats();
+
+            textInput.focus();
+
+        }
+
+
+        // Initial stats
+
+        updateStats();
+
+    </script>
+
+</body>
+
+</html>

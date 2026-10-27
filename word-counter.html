@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Word Counter - Free Online Word & Character Counter | ToolMitra</title>
+
+    <meta name="description"
+        content="Count words, characters, sentences and paragraphs with ToolMitra's free online Word Counter. Fast, simple and easy to use.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <div class="tool-page-container">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+            →
+            Word Counter
+
+        </div>
+
+
+        <!-- Header -->
+        <div class="tool-header">
+
+            <h1>Word Counter</h1>
+
+            <p>
+                Count words, characters, sentences and paragraphs
+                instantly with our free online Word Counter.
+            </p>
+
+        </div>
+
+
+        <!-- Advertisement -->
+        <div class="ad-box">
+            Advertisement
+        </div>
+
+
+        <!-- Word Counter -->
+        <div class="calculator-card">
+
+            <h2>Online Word Counter</h2>
+
+            <textarea
+                id="textInput"
+                placeholder="Type or paste your text here..."
+                style="
+                    width:100%;
+                    min-height:250px;
+                    padding:15px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    resize:vertical;
+                    font-size:16px;
+                    margin-bottom:20px;
+                "
+                oninput="countText()"
+            ></textarea>
+
+
+            <div class="calculator-result">
+
+                <div class="result-row">
+
+                    <span>Words</span>
+
+                    <strong id="wordCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Characters</span>
+
+                    <strong id="characterCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Characters (without spaces)</span>
+
+                    <strong id="characterNoSpaceCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Sentences</span>
+
+                    <strong id="sentenceCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-row">
+
+                    <span>Paragraphs</span>
+
+                    <strong id="paragraphCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-total">
+
+                    <span>Reading Time</span>
+
+                    <strong id="readingTime">
+                        0 min
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="calculator-buttons">
+
+                <button onclick="copyText()">
+                    Copy Text
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="clearText()">
+                    Clear
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEO Content -->
+        <div class="seo-content">
+
+            <h2>What is a Word Counter?</h2>
+
+            <p>
+                A Word Counter is an online tool that counts the
+                number of words and characters in a piece of text.
+                It can also provide useful information such as
+                sentence count, paragraph count and estimated
+                reading time.
+            </p>
+
+
+            <h2>How to Use the Word Counter?</h2>
+
+            <ol>
+
+                <li>
+                    Type or paste your text into the text box.
+                </li>
+
+                <li>
+                    The tool automatically counts your words and
+                    characters.
+                </li>
+
+                <li>
+                    Check sentences, paragraphs and estimated
+                    reading time.
+                </li>
+
+                <li>
+                    Use the Copy Text button if you want to copy
+                    your text.
+                </li>
+
+            </ol>
+
+
+            <h2>Who Can Use a Word Counter?</h2>
+
+            <p>
+                Students, writers, bloggers, content creators,
+                freelancers and social media users can use a word
+                counter to quickly check the length of their text.
+            </p>
+
+
+            <h2>Why Count Words?</h2>
+
+            <p>
+                Many assignments, articles, applications and
+                online platforms have word or character limits.
+                A word counter makes it easy to check whether your
+                content is within the required limit.
+            </p>
+
+
+            <h2>Word Count vs Character Count</h2>
+
+            <p>
+                Word count measures the number of words in your
+                text, while character count measures individual
+                characters. Character count can include spaces,
+                punctuation and other symbols.
+            </p>
+
+
+            <h2>Frequently Asked Questions</h2>
+
+
+            <h3>Is this Word Counter free?</h3>
+
+            <p>
+                Yes. ToolMitra's Word Counter is completely free
+                to use.
+            </p>
+
+
+            <h3>Does the Word Counter work on mobile?</h3>
+
+            <p>
+                Yes. The tool is designed to work on phones,
+                tablets and desktop computers.
+            </p>
+
+
+            <h3>Does it count characters with spaces?</h3>
+
+            <p>
+                Yes. The tool displays both total characters and
+                characters without spaces.
+            </p>
+
+
+            <h3>Does it calculate reading time?</h3>
+
+            <p>
+                Yes. The estimated reading time is calculated using
+                the number of words in your text.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 ToolMitra. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function countText() {
+
+            const text =
+                document.getElementById("textInput").value;
+
+
+            // Words
+            const trimmedText =
+                text.trim();
+
+            let words = 0;
+
+            if (trimmedText.length > 0) {
+
+                words =
+                    trimmedText.split(/\s+/).length;
+
+            }
+
+
+            // Characters
+            const characters =
+                text.length;
+
+
+            // Characters without spaces
+            const charactersWithoutSpaces =
+                text.replace(/\s/g, "").length;
+
+
+            // Sentences
+            let sentences = 0;
+
+            if (trimmedText.length > 0) {
+
+                const sentenceMatches =
+                    trimmedText.match(/[.!?]+(?=\s|$)/g);
+
+                sentences =
+                    sentenceMatches
+                        ? sentenceMatches.length
+                        : 0;
+
+            }
+
+
+            // Paragraphs
+            let paragraphs = 0;
+
+            if (trimmedText.length > 0) {
+
+                paragraphs =
+                    text
+                        .split(/\n\s*\n/)
+                        .filter(
+                            paragraph =>
+                            paragraph.trim().length > 0
+                        )
+                        .length;
+
+            }
+
+
+            // Reading time
+            const wordsPerMinute = 200;
+
+            const readingMinutes =
+                words / wordsPerMinute;
+
+
+            let readingText = "0 min";
+
+            if (words > 0 && readingMinutes < 1) {
+
+                readingText = "Less than 1 min";
+
+            } else if (words > 0) {
+
+                readingText =
+                    Math.ceil(readingMinutes) + " min";
+
+            }
+
+
+            // Update results
+            document.getElementById("wordCount")
+                .textContent = words;
+
+
+            document.getElementById("characterCount")
+                .textContent = characters;
+
+
+            document.getElementById("characterNoSpaceCount")
+                .textContent = charactersWithoutSpaces;
+
+
+            document.getElementById("sentenceCount")
+                .textContent = sentences;
+
+
+            document.getElementById("paragraphCount")
+                .textContent = paragraphs;
+
+
+            document.getElementById("readingTime")
+                .textContent = readingText;
+
+        }
+
+
+        function clearText() {
+
+            document.getElementById("textInput").value = "";
+
+            countText();
+
+        }
+
+
+        function copyText() {
+
+            const text =
+                document.getElementById("textInput").value;
+
+
+            if (!text) {
+
+                alert("There is no text to copy.");
+
+                return;
+
+            }
+
+
+            navigator.clipboard.writeText(text)
+                .then(function() {
+
+                    alert("Text copied successfully!");
+
+                })
+                .catch(function() {
+
+                    alert("Unable to copy text.");
+
+                });
+
+        }
+
+    </script>
+
+</body>
+</html>
